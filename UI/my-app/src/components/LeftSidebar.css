@@ -1,0 +1,284 @@
+/* LeftSidebar.css */
+
+.left-sidebar {
+  width: 20%;
+  background-color: #ffffff;
+  padding-top: 25px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 8px 8px 50px rgba(77, 37, 170, 0.2);
+  color: #1b254b;
+  }
+  
+  .custom-file-input {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 15px;
+    border-radius: 25px;
+    color: white;
+    margin: 15px 30px;
+    text-align: center;
+    background: linear-gradient(40.46deg,#4A25E1 26.3%, #7B5AFF 86.4%);
+    transition: background-color 0.3s ease;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-file-input:hover {
+   
+      box-shadow: 0px 10px 20px rgb(165, 159, 233); 
+    
+  }
+  
+  .custom-file-input input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    
+    
+  }
+
+.history-section{
+  text-align: left;
+  padding: 15px 10px;
+  overflow-y: auto;
+  height: calc(100vh - 180px);
+}
+
+  
+ 
+li{
+  cursor: pointer;
+  margin-left: 10px;
+  list-style-type: none;
+  color: #5a658f;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+ 
+}
+
+
+.history-section ul li:hover::after {
+  content: attr(title);  
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: normal; 
+  width: max-content;
+  z-index: 1000;
+}
+
+.history-icon{
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+
+.upload{
+  padding-right: 8px;
+}
+
+.lnt-logo{
+  width: 270px;
+  padding: 5px;
+  height: 60px;
+}
+
+
+.user-card-container {
+  border-radius: 30px;
+  padding: 6px;
+  margin: 0px 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-bar {
+  height: 8px;
+  margin: 10px 15px ;
+  border-radius: 10px;
+  background: linear-gradient(40.46deg,#4A25E1 26.3%, #7B5AFF 86.4%);
+  margin-bottom: 10px;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.user_avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1b254b;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-icon {
+  font-size: 15px;
+  padding: 5px;
+  color: #555863;
+  cursor: pointer;
+  border: 1px solid rgb(209, 204, 204);
+  border-radius: 40%;
+}
+
+
+
+.icon-with-tooltip {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; 
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 80px; 
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 3px 0px;
+  position: absolute;
+  bottom: 125%; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity 0.3s;
+  font-size: 12px; 
+}
+
+.icon-with-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+/* dark mode */
+
+.dark-mode .left-sidebar{
+  background: linear-gradient(90deg, #1b254b, #1b254b, #374177);
+  color: #fff;
+}
+
+.dark-mode .new{
+  color: #fff;
+  background: linear-gradient(90deg, #1b254b, #1b254b, #374177);
+}
+
+.dark-mode .user-card-container{
+  background-color: rgba(209, 207, 228, 0.103); 
+  
+}
+
+.dark-mode .user-name{
+  color: #fff;
+}
+
+.dark-mode .user-icon{
+  color: #fff;
+  border: 1px solid grab;
+}
+
+.dark-mode .css-13cymwt-control {
+  background-color: rgba(209, 207, 228, 0.103); 
+}
+
+.dark-mode li{
+  color: #c4bbbb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container for the folder selector */
+.folder-selector-container {
+  width: 100%;
+  padding: 10px;
+}
+
+.folder-selector-heading {
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+}
+
+.input-container {
+  position: relative;
+}
+
+.folder-input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.reset-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dropdown-container {
+  padding: 10px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
+.folder-item {
+  padding: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}

@@ -1,0 +1,1571 @@
+// src/App.js
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Login from './components/Login';
+import Dashboard from './components/Dashboards';         // QA Dashboard UI
+import ChatDashboard from './components/ChatDashboard';   // Chat (ChatGPT-like) UI
+import NotFound from './components/NotFound';
+import Landing from './components/Landing';
+
+function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    // Check for token and username in sessionStorage
+    const token = sessionStorage.getItem('authToken');
+    const user = sessionStorage.getItem('userName');
+    setIsAuthenticated(token !== null);
+    setUsername(user || "");
+  }, []);
+
+  return (
+    <Router>
+      <Routes>
+        {/* Default route: if authenticated then landing else login */}
+        <Route
+          path="/"
+          element={isAuthenticated ? <Navigate to="/landing" replace /> : <Navigate to="/login" replace />}
+        />
+        {/* Login Page */}
+        <Route
+          path="/login"
+          element={
+            isAuthenticated ? (
+              <Navigate to="/landing" replace />
+            ) : (
+              <Login onLogin={() => setIsAuthenticated(true)} setUsername={setUsername} />
+            )
+          }
+        />
+        {/* Landing Page */}
+        <Route
+          path="/landing"
+          element={
+            isAuthenticated ? (
+              <Landing username={username} />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+        {/* QA Dashboard Page; mode prop passed as "qa" */}
+        <Route
+          path="/dashboard"
+          element={
+            isAuthenticated ? (
+              <Dashboard 
+                onLogout={() => setIsAuthenticated(false)} 
+                username={username} 
+                setUsername={setUsername} 
+                mode="qa" 
+              />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+        {/* Chat (ChatGPT-like) Dashboard Page; mode prop passed as "chat" */}
+        <Route
+          path="/chat"
+          element={
+            isAuthenticated ? (
+              <ChatDashboard 
+                onLogout={() => setIsAuthenticated(false)} 
+                username={username} 
+                setUsername={setUsername} 
+                mode="chat" 
+              />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+        {/* Code Dashboard or placeholder */}
+        <Route
+          path="/code"
+          element={<div style={{ padding: '20px', textAlign: 'center' }}><h2>Code Interface Placeholder</h2></div>}
+        />
+        {/* Catch-all route */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './MainContent.css';
+import PromptResponseCard from './main_sub_components/PromptResponseCard';
+import ChatControls from './main_sub_components/ChatControls';
+import NavBar from './NavBar';
+
+function MainContent({ setHistory, selectedSessionId, resetSelectedSessionId, selectedFiles, userfile }) {
+  const [prompt, setPrompt] = useState('');
+  const [responses, setResponses] = useState([]);
+  const [editingIndex, setEditingIndex] = useState(null);
+  const [sessionId, setSessionId] = useState(null);
+  const apiUrl = process.env.REACT_APP_API_URL;
+  const token = sessionStorage.getItem('authToken');
+  const navigate = useNavigate();
+
+  // Function to handle input change
+  const handleInputChange = (e) => {
+    setPrompt(e.target.value);
+  };
+
+  // Function to handle new chat
+  const handleNewChat = () => {
+    setResponses([]);
+    setPrompt('');
+    setEditingIndex(null);
+    setSessionId(null);
+    resetSelectedSessionId();
+  };
+
+  // Function to send the prompt and stream response (for Chat UI)
+  const handleSendPrompt = async (promptToSend) => {
+    const fullprompt = `${responses.length > 0
+      ? `Previous Question: ${responses[responses.length - 1].prompt}\n Previous answer: ${responses[responses.length - 1].response}\n`
+      : ''} current question: ${promptToSend}`;
+    if (!fullprompt) return;
+
+    const newResponseEntry = {
+      prompt: promptToSend,
+      response: '',
+      loading: true,
+    };
+
+    // Add a new response entry with a loading state to the responses array
+    setResponses((prevResponses) => [...prevResponses, newResponseEntry]);
+    setPrompt('');
+    try {
+      const fileNames = selectedFiles.map((file) => file);
+      const requestData = {
+        prompt: fullprompt,
+        session_id: sessionId || selectedSessionId,
+        file_names: fileNames,
+        jwt_token: token,
+        useruploadfile: userfile ? userfile.name : "",
+        prompt_type: "chat",  // NEW: specify chat mode
+      };
+
+      const res = await fetch(`${apiUrl}/api/cohere/generate/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(requestData),
+      });
+
+      const historyId = res.headers.get('X-History-ID');
+      const sessionIdFromHeader = res.headers.get('X-Session-ID');
+      setSessionId(sessionIdFromHeader || selectedSessionId);
+
+      // Handle streaming the partial responses
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+      let responseChunks = [];
+
+      while (!done) {
+        const { value, done: doneReading } = await reader.read();
+        done = doneReading;
+        // Decode and append the response chunk to the array
+        const chunk = decoder.decode(value, { stream: true });
+        if (chunk.trim()) {
+          responseChunks = [...responseChunks, chunk];
+        }
+        // Break if a specific pattern is detected (adjust as needed)
+        if (chunk.includes('      ')) {
+          done = true;
+          continue;
+        }
+        setResponses((prevResponses) => {
+          const updatedResponse = {
+            prompt: promptToSend,
+            response: responseChunks.join(' '),
+            loading: true,
+            id: historyId || null,
+          };
+          return [...prevResponses.slice(0, -1), updatedResponse];
+        });
+      }
+
+      // Fetch updated history
+      fetch(`${apiUrl}/api/history/`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then((res) => res.json())
+        .then((data) => setHistory(data || []))
+        .catch((error) => console.error('Error fetching history:', error));
+
+      // Remove source text (if present) before updating the final response
+      setResponses((prevResponses) => {
+        const fullText = responseChunks.join(' ');
+        // Remove any source details if present (adjust the keyword as needed)
+        const cleanedText = fullText.split('Source:')[0];
+        const finalResponse = {
+          prompt: promptToSend,
+          response: cleanedText,
+          loading: false,
+          id: historyId || null,
+        };
+        return [...prevResponses.slice(0, -1), finalResponse];
+      });
+      setPrompt('');
+    } catch (error) {
+      console.error('Error:', error);
+      setResponses((prevResponses) => {
+        const errorResponse = {
+          prompt: promptToSend,
+          response: 'An error occurred',
+          loading: false,
+        };
+        console.log('Error responses state:', [...prevResponses.slice(0, -1), errorResponse]);
+        return [...prevResponses.slice(0, -1), errorResponse];
+      });
+      setPrompt('');
+      alert("Session has ended. Please log in again.");
+      sessionStorage.clear();
+      navigate('/login');
+    }
+  };
+
+  // Initial call to fetch history when component loads
+  useEffect(() => {
+    fetch(`${apiUrl}/api/history/`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then((res) => {
+        if (res.status === 401) {
+          alert("Session has ended. Please log in again.");
+          sessionStorage.clear();
+          window.location.href = '/login';
+          navigate('/login');
+          return null;
+        }
+        return res.json();
+      })
+      .then((data) => setHistory(data || []))
+      .catch((error) => console.error('Error fetching history:', error));
+  }, [setHistory, apiUrl, token, navigate]);
+
+  const fetchSessionHistory = useCallback((session_id) => {
+    fetch(`${apiUrl}/api/history/${session_id}/`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const sessionData = (data || []).map((item) => ({
+          prompt: item.prompt,
+          response: item.response,
+          loading: false,
+          id: item.id,
+        }));
+        setResponses(sessionData);
+        setSessionId(session_id);
+      })
+      .catch((error) =>
+        console.error('Error fetching session history:', error)
+      );
+  }, [apiUrl, token]);
+
+  useEffect(() => {
+    if (selectedSessionId) {
+      fetchSessionHistory(selectedSessionId);
+    }
+  }, [selectedSessionId, fetchSessionHistory]);
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendPrompt(prompt);
+    }
+  };
+
+  const responseEndRef = useRef(null);
+  const prevResponseCountRef = useRef(0);
+  useEffect(() => {
+    if (responses.length > prevResponseCountRef.current) {
+      if (responseEndRef.current) {
+        responseEndRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    prevResponseCountRef.current = responses.length;
+  }, [responses]);
+
+  const handleSubmitEditedPrompt = async (newPrompt, index) => {
+    let updatedResponses = [...responses];
+    updatedResponses[index] = {
+      ...updatedResponses[index],
+      prompt: newPrompt,
+      response: '',
+      loading: true,
+    };
+    setResponses(updatedResponses);
+  
+    try {
+      const fileNames = selectedFiles.map((file) => file);
+      const requestData = {
+        prompt: newPrompt,
+        session_id: sessionId,
+        file_names: fileNames,
+        jwt_token: token,
+        useruploadfile: userfile ? userfile.name : "",
+        prompt_type: "chat", // also tag edited prompt requests with chat mode
+      };
+
+      setEditingIndex(null);
+      const res = await fetch(`${apiUrl}/api/cohere/generate/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(requestData),
+      });
+  
+      const sessionIdFromHeader = res.headers.get('X-Session-ID');
+      setSessionId(sessionIdFromHeader || sessionId);
+  
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+      let responseChunks = [];
+  
+      while (!done) {
+        const { value, done: doneReading } = await reader.read();
+        const chunk = decoder.decode(value, { stream: true });
+        if (chunk.trim()) {
+          responseChunks = [...responseChunks, chunk];
+        }
+        if (chunk.includes('      ') || doneReading) {
+          done = true;
+          continue;
+        }
+        setResponses((prevResponses) => {
+          const updatedResponse = {
+            ...prevResponses[index],
+            response: responseChunks.join(' '),
+            loading: true,
+          };
+          const newResponses = [...prevResponses];
+          newResponses[index] = updatedResponse;
+          return newResponses;
+        });
+      }
+  
+      setResponses((prevResponses) => {
+        const finalResponse = {
+          ...prevResponses[index],
+          response: responseChunks.join(' '),
+          loading: false,
+        };
+        const newResponses = [...prevResponses];
+        newResponses[index] = finalResponse;
+        return newResponses;
+      });
+  
+    } catch (error) {
+      updatedResponses[index].response = 'An error occurred';
+      updatedResponses[index].loading = false;
+      setResponses(updatedResponses);
+    }
+  };
+
+  return (
+    <div className="main-container">
+      <NavBar />
+      <div className="logo-container">
+        {responses.length > 0 ? (
+          <div className="responses-list">
+            {responses.map((item, index) => {
+              return (
+                <PromptResponseCard
+                  key={item.id}
+                  item={item}
+                  index={index}
+                  editingIndex={editingIndex}
+                  setEditingIndex={setEditingIndex}
+                  handleSubmitEditedPrompt={handleSubmitEditedPrompt}
+                  onSendPrompt={handleSendPrompt}
+                />
+              );
+            })}
+            <div ref={responseEndRef} />
+          </div>
+        ) : (
+          <h1 className="saarthi-logo"> </h1>
+        )}
+      </div>
+
+      <ChatControls
+        prompt={prompt}
+        handleInputChange={handleInputChange}
+        handleKeyPress={handleKeyPress}
+        handleSendPrompt={handleSendPrompt}
+        handleNewChat={handleNewChat}
+      />
+
+      <p className="disclaimer">
+        Correctness of response depends on the probabilistic nature of the model. For more precise and accurate information, please refer to the actual document!
+      </p>
+    </div>
+  );
+}
+
+export default MainContent;
+
+// src/Dashboard.js
+import React from 'react';
+import { useState } from 'react';
+import './App.css';
+import LeftSidebar from './LeftSidebar';
+import MainContent from './MainContent';
+import ThemeProvider from './main_sub_components/ThemeProvider'; 
+
+function Dashboard({ onLogout, username, setUsername}) {
+
+  const [history, setHistory] = useState({ today: [], yesterday: [], last_week: [], last_month: [] });
+  const [selectedSessionId, setSelectedSessionId] = useState(null);
+  const [selectedFiles, setSelectedFiles] = useState([]); 
+  const [userfile, ansetuserfile] = useState(null);
+
+  // Callback function to handle history clicks
+  const handleHistoryClick = (session_id) => {
+    setSelectedSessionId(session_id); 
+  }; 
+
+  // Callback to handle file selection from LeftSidebar
+  const handleFileSelection = (files) => {
+    setSelectedFiles(files); 
+  };
+
+  return (
+    <ThemeProvider>
+      <div className="App">
+
+        <div className="container">
+
+          <LeftSidebar history={history} onLogout={onLogout} userfile = {userfile} ansetuserfile = {ansetuserfile}
+           onHistoryClick={handleHistoryClick} onFileSelect={handleFileSelection} username={username} setUsername={setUsername} />
+          <MainContent setHistory={setHistory} selectedSessionId={selectedSessionId}
+          resetSelectedSessionId={() => setSelectedSessionId(null)}  selectedFiles={selectedFiles} userfile = {userfile}  />
+        </div>
+      </div>
+
+    </ThemeProvider>
+  );
+}
+
+export default Dashboard;
+
+
+from threading import Thread
+from sentence_transformers import SentenceTransformer
+from functools import lru_cache 
+from pymilvus import connections, Collection
+from .models import CurrentUsingCollection
+import re, os
+from dotenv import load_dotenv
+from langchain_community.vectorstores import FAISS
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_core.documents import Document
+from .Chunking_UI.file_process import create_faiss_index
+load_dotenv()
+
+import requests
+import json
+
+qa_prompt = """
+You are an AI assistant designed to assist users by providing simple and clear answers to their questions.
+INSTRUCTIONS:
+- Context is generated from database so user is not aware about context, so advise users to refer to the source for exact information or prompt users to ask more relevant query.
+- Reduce the context within the thinking window.
+- Promote users to click the continue button to explore more relevant details for every response.
+- In your response, do not show the source, since the source is given to the user directly.
+
+Provide a concise response unless the user requests more details.
+"""
+
+chat_prompt = """
+You are a generic conversational assistant.
+CRITICAL INSTRUCTION: You are in PURE CHAT MODE. 
+- DO NOT mention or reference ANY documents, sources, or context
+- DO NOT assume the user has any specific topic in mind
+- DO NOT mention heat treatment, cyaniding, nitriding, or any other technical topics unless specifically asked
+- Simply respond directly to what the user says in a friendly, helpful manner
+- Keep your initial greeting simple and brief, like "Hello! How can I help you today?"
+"""
+
+url = "http://172.16.34.235:8080/v1/chat/completions"
+headers = {
+    "Content-Type": "application/json"
+}
+
+host = os.getenv("HOST")
+port = os.getenv("PORT")
+
+collection_name = "check"
+
+if collection_name:
+    MILVUS_COLLECTION = collection_name
+
+def pure_chat_response(user_input):
+    """
+    Completely isolated chat function that doesn't reference any documents.
+    """
+    try:
+        improved_chat_prompt = """
+        You are a general conversational assistant.
+        STRICT INSTRUCTIONS:
+        - This is CHAT MODE - you must never reference, mention, or assume any documents or context
+        - Do not mention sources, references, files, or any database information
+        - Do not assume the user is asking about any specific technical topic
+        - Respond directly to what the user asks in a friendly, helpful manner
+        - Keep responses concise unless the user asks for more detail
+        - If you're not sure about something, admit it rather than making up information
+        - Under no circumstances should you mention or reference documents, context, sources, or files
+        """
+        
+        data = {
+            "model": "tgi",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": improved_chat_prompt
+                },
+                {
+                    "role": "user",
+                    "content": user_input
+                }
+            ],
+            "stream": True,
+            "max_tokens": 1500
+        }
+
+        with requests.post(url, headers=headers, data=json.dumps(data), proxies={"http": None, "https": None}, stream=True) as response:
+            if response.status_code == 200:
+                for chunk in response.iter_lines():
+                    if chunk:
+                        decoded_chunk = chunk.decode('utf-8')
+                        if decoded_chunk.startswith("data:"):
+                            decoded_chunk = decoded_chunk[5:].strip()
+                        
+                        if decoded_chunk == "[DONE]":
+                            break
+                        
+                        try:
+                            chunk_data = json.loads(decoded_chunk)
+                            content = chunk_data.get('choices', [{}])[0].get('delta', {}).get('content', '')
+                            if content:
+                                yield content
+                        except json.JSONDecodeError as e:
+                            print(f"JSON Decode Error: {e}")
+                        except Exception as e:
+                            print(f"Error processing chunk: {e}")
+            else:
+                yield f"Error: Unable to process your request (Status code: {response.status_code})"
+    except Exception as e:
+        yield f"Chat error: {str(e)}"
+
+def qa_response(question, context):
+    """
+    QA function that uses document context.
+    """
+    try:
+        data = {
+            "model": "tgi",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": qa_prompt
+                },
+                {
+                    "role": "user",
+                    "content": f"Refer to the Context scrapped from Vector Database {context} and answer the user question: {question}"
+                }
+            ],
+            "stream": True,
+            "max_tokens": 1500
+        }
+
+        with requests.post(url, headers=headers, data=json.dumps(data), proxies={"http": None, "https": None}, stream=True) as response:
+            if response.status_code == 200:
+                for chunk in response.iter_lines():
+                    if chunk:
+                        decoded_chunk = chunk.decode('utf-8')
+                        if decoded_chunk.startswith("data:"):
+                            decoded_chunk = decoded_chunk[5:].strip()
+                        
+                        if decoded_chunk == "[DONE]":
+                            break
+                        
+                        try:
+                            chunk_data = json.loads(decoded_chunk)
+                            content = chunk_data.get('choices', [{}])[0].get('delta', {}).get('content', '')
+                            if content:
+                                yield content
+                        except json.JSONDecodeError as e:
+                            print(f"JSON Decode Error: {e}")
+                        except Exception as e:
+                            print(f"Error processing chunk: {e}")
+            else:
+                yield f"Error: Unable to process your request (Status code: {response.status_code})"
+    except Exception as e:
+        yield f"QA error: {str(e)}"
+
+embedding_model = SentenceTransformer('/home/aicoe/Desktop/SDC_FINAL/QA-main/RAG_backend/cohere_app/embedding_model')
+embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2', model_kwargs={'device': "cpu"})
+
+qa_user_sessions = {}
+search_params = {"metric_type": "L2", "params": {"ef": 30}}
+
+def clean_string(input_string):
+    cleaned_string = re.sub(r'\s+', ' ', input_string)
+    cleaned_string = cleaned_string.strip()
+    return cleaned_string
+
+def process_query(user_input, selected_file=None, system_id="default", batch_size=3, mode="qa"):
+    """
+    Main entry point that routes to either chat or QA mode.
+    """
+    # If mode is chat, use pure chat without any document context
+    if mode == "chat":
+        for chunk in pure_chat_response(user_input):
+            yield chunk
+        return
+    
+    # Otherwise proceed with QA mode
+    try:
+        connections.connect("default", host=host, port=port)
+        collection = Collection(MILVUS_COLLECTION)
+        collection.load()
+            
+        if system_id not in qa_user_sessions:
+            qa_user_sessions[system_id] = {
+                'results': [],
+                'current_index': 0,
+                'last_query': None
+            }
+        session = qa_user_sessions[system_id]
+
+        if user_input.lower() == "continue":
+            if not session['last_query']:
+                yield "No previous query found. Please enter a new question."
+                return
+            elif session['current_index'] >= len(session['results']):
+                yield "No more results to display."
+                return
+        else:
+            session['last_query'] = user_input
+            
+            query_vector = embedding_model.encode([user_input]).tolist()
+            if selected_file:
+                formatted_files = ", ".join([f"'{file}'" for file in selected_file])
+                expr = f"source in [{formatted_files}]"
+            else:
+                expr = None
+
+            search_results = collection.search(
+                data=query_vector,
+                anns_field="vector",
+                param=search_params,
+                limit=15,
+                output_fields=["source", "page", "text"],
+                consistency_level="Strong",
+                expr=expr
+            )
+            all_hits = []
+            for hits in search_results:
+                all_hits.extend(hits)
+            session['results'] = all_hits
+            session['current_index'] = 0
+        
+        start_index = session['current_index']
+        end_index = start_index + batch_size
+        batch_results = session['results'][start_index:end_index]
+        session['current_index'] = end_index
+
+        context = '\n---\n'.join(
+            f"File: {hit.entity.get('source')}\nPage: {hit.entity.get('page')}\nText: {hit.entity.get('text')}"
+            for hit in batch_results
+        )
+
+        current_question = session['last_query'] if user_input.lower() == "continue" else user_input
+
+        for chunk in qa_response(current_question, context):
+            yield chunk
+
+        sources = [
+            f"Source: {hit.entity.get('source')} | Page: {hit.entity.get('page')}"
+            for hit in batch_results
+        ]
+        yield '\n'.join(sources)
+
+    except Exception as e:
+        yield f"Error occurred: {str(e)}"
+        print(f"Full error: {e}")
+    finally:
+        try:
+            connections.disconnect("default")
+        except:
+            pass
+
+
+@lru_cache(maxsize=None)
+def get_all_files_from_milvus():
+    """
+    Get all files from Milvus database.
+    Only used in QA mode.
+    """
+    try:
+        connections.connect("default", host=host, port=port)
+        collection = Collection(MILVUS_COLLECTION)
+        iterator = collection.query_iterator(batch_size=1000, output_fields=["source"])
+        results = []
+        while True:
+            result = iterator.next()
+            if not result:
+                iterator.close()
+                break
+            results.extend(result)
+        
+        database_files = []
+        for result in results:
+            database_files.append(result['source'])
+        database_files = list(set(database_files))
+        connections.disconnect("default")
+        return database_files
+    except Exception as e:
+        print(f"Error getting files from Milvus: {str(e)}")
+        return []
+
+
+def chat_with_uploaded_document(faiss_folder, query, top_k=3):
+    """
+    Allow chat mode to use uploaded documents.
+    This is separate from the Milvus-based QA mode.
+    """
+    try:
+        desktop_path = os.path.join(os.path.expanduser("~"), "Desktop", faiss_folder)
+        faiss_index = FAISS.load_local(desktop_path, embeddings, allow_dangerous_deserialization=True)
+        search_results = faiss_index.similarity_search(query, k=top_k)
+        
+        document_content = ""
+        for i, result in enumerate(search_results):
+            document_content += result.page_content + "\n\n"
+        
+        chat_with_doc_prompt = """
+        You are a conversational assistant.
+        The user has uploaded a document and is asking questions about it.
+        Respond to their questions based on the document content provided.
+        Do not mention 'sources' or 'references' in your response.
+        """
+        
+        data = {
+            "model": "tgi",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": chat_with_doc_prompt
+                },
+                {
+                    "role": "user",
+                    "content": f"Here is the content from my document:\n\n{document_content}\n\nMy question is: {query}"
+                }
+            ],
+            "stream": True,
+            "max_tokens": 1500
+        }
+        
+        with requests.post(url, headers=headers, data=json.dumps(data), proxies={"http": None, "https": None}, stream=True) as response:
+            if response.status_code == 200:
+                for chunk in response.iter_lines():
+                    if chunk:
+                        decoded_chunk = chunk.decode('utf-8')
+                        if decoded_chunk.startswith("data:"):
+                            decoded_chunk = decoded_chunk[5:].strip()
+                        
+                        if decoded_chunk == "[DONE]":
+                            break
+                        
+                        try:
+                            chunk_data = json.loads(decoded_chunk)
+                            content = chunk_data.get('choices', [{}])[0].get('delta', {}).get('content', '')
+                            if content:
+                                yield content
+                        except Exception as e:
+                            print(f"Error processing chunk: {e}")
+            else:
+                yield f"Error: Unable to process your document (Status code: {response.status_code})"
+    except Exception as e:
+        yield f"Error processing uploaded document: {str(e)}"
+from decouple import config
+import os, json, mimetypes
+from datetime import datetime, timedelta
+import glob
+import uuid
+import subprocess
+import urllib.parse
+import threading
+from django.contrib.auth import get_user_model
+from pymilvus import connections, Collection, MilvusClient
+from django.http import JsonResponse, StreamingHttpResponse, FileResponse, Http404
+from django.contrib.auth import authenticate
+from django.utils import timezone
+from django.db import connection
+from django.db.models import Min
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework import status
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
+from rest_framework_simplejwt.tokens import RefreshToken
+from .models import PromptHistory, CurrentUsingCollection
+from .serializers import PromptHistorySerializer, CurrentUsingCollectionSerializer
+from .api import process_query, get_all_files_from_milvus, chat_with_uploaded_document
+from .Chunking_UI import file_process, db_utility
+from .Chunking_UI.enable_logging import logger
+from urllib.parse import unquote
+from dotenv import load_dotenv
+from .ldap import auth_main
+import tempfile
+import shutil
+from django.contrib.auth.models import User
+load_dotenv()
+
+Milvus_url = os.getenv("MILVUS_URL")
+client = MilvusClient(uri= Milvus_url, token="root:Milvus")
+progress_data = {"message": "Starting upload..."}
+
+PDF_DIRECTORY = config('PDF_DIRECTORY')
+host = os.getenv("HOST")
+port = os.getenv("PORT")
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def login_user(request):
+    username = request.data.get("username")
+    password = request.data.get("password")
+    try:
+        user = auth_main(username=username, password=password)
+        if user is not False:
+            User = get_user_model()
+            if not User.objects.filter(username=username).exists():
+                User.objects.create(username=username)
+            user_instance = User.objects.get(username=username)
+            refresh = RefreshToken.for_user(user_instance)
+            
+            return Response({
+                'refresh': str(refresh),
+                'access': str(refresh.access_token),
+                'username': user_instance.username
+            })
+        else:
+            return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+    except Exception as e:
+        print(f'Login error: {e}')
+        return Response({"error": "Authentication failed"}, status=status.HTTP_401_UNAUTHORIZED)
+    
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def logout_user(request):
+    try:
+        refresh_token = request.data.get("refresh")
+        username = request.user.username
+        desktop_path = os.path.join(os.path.expanduser("~"), "Desktop", username)       
+        if os.path.exists(desktop_path) and os.path.isdir(desktop_path):
+            shutil.rmtree(desktop_path) 
+            print(f"Folder '{username}' deleted from Desktop.")
+        else:
+            print(f"No folder named '{username}' found on Desktop.")
+        token = RefreshToken(refresh_token)
+        token.blacklist()
+        return Response({"message": "Logout successful"}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({"error": f"Invalid token or logout failed: {str(e)}"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST'])
+def refresh_access_token(request):
+    """
+    Refresh the access token using the refresh token.
+    """
+    refresh_token = request.data.get('refresh')
+    try:
+        refresh = RefreshToken(refresh_token)
+        new_access_token = str(refresh.access_token)
+        return Response({"access": new_access_token}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({"detail": f"Error refreshing token: {str(e)}"}, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def chat_generate(request):
+    """
+    Completely separate endpoint for chat-only mode with no document context.
+    """
+    try:
+        data = request.data
+        prompt = data.get('prompt', '')
+        session_id = data.get('session_id') or str(uuid.uuid4())
+        user_name = request.user.username
+        usernames_entry = User.objects.get(username=user_name)
+        user_upload_file = data.get("useruploadfile", '')
+        
+        prompt_history_entry = PromptHistory.objects.create(
+            user=usernames_entry,
+            session_id=session_id,
+            prompt=prompt,
+            response=""
+        )
+        serializer = PromptHistorySerializer(prompt_history_entry)
+        history_id = serializer.data['id']
+        
+        def response_stream():
+            collected_responses = []
+            if user_upload_file:
+                for partial_response in chat_with_uploaded_document(user_name, prompt):
+                    collected_responses.append(partial_response)
+                    yield partial_response
+            else:
+                for partial_response in pure_chat_response(prompt):
+                    collected_responses.append(partial_response)
+                    yield partial_response
+            
+            combined_response = "\n".join(collected_responses)
+            yield "      " 
+
+            def save_to_database():
+                prompt_history_entry.response = combined_response
+                prompt_history_entry.save()
+
+            threading.Thread(target=save_to_database).start()
+            
+        response = StreamingHttpResponse(
+            response_stream(),
+            content_type='text/plain',
+            status=status.HTTP_200_OK
+        )
+
+        response['X-History-ID'] = str(history_id)
+        response['X-Session-ID'] = session_id
+        response['Access-Control-Allow-Origin'] = '*'
+        response['Access-Control-Expose-Headers'] = 'X-History-ID, X-Session-ID'
+
+        return response
+
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def cohere_generate(request):
+    """
+    QA mode endpoint - always uses document context
+    """
+    try:
+        data = request.data
+        prompt = data.get('prompt', '')
+        session_id = data.get('session_id') or str(uuid.uuid4())
+        file_names = data.get('file_names', [])
+        jwt_token = data.get('jwt_token', '')
+        user_name = request.user.username
+        usernames_entry = User.objects.get(username=user_name)
+        
+        if "current question" in prompt:
+            prompt_entry = prompt.split("current question:")[-1].strip()
+        else:
+            prompt_entry = prompt
+
+        prompt_history_entry = PromptHistory.objects.create(
+            user=usernames_entry,
+            session_id=session_id,
+            prompt=prompt_entry,
+            response=""
+        )
+        serializer = PromptHistorySerializer(prompt_history_entry)
+        history_id = serializer.data['id']
+        
+        def response_stream():
+            collected_responses = []
+            # Always use QA mode with document context
+            for partial_response in process_query(prompt, file_names, jwt_token):
+                collected_responses.append(partial_response)
+                yield partial_response
+            
+            combined_response = "\n".join(collected_responses)
+            yield "      "  # Final padding chunk
+
+            def save_to_database():
+                prompt_history_entry.response = combined_response
+                prompt_history_entry.save()
+
+            threading.Thread(target=save_to_database).start()
+            
+        response = StreamingHttpResponse(
+            response_stream(),
+            content_type='text/plain',
+            status=status.HTTP_200_OK
+        )
+
+        response['X-History-ID'] = str(history_id)
+        response['X-Session-ID'] = session_id
+        response['Access-Control-Allow-Origin'] = '*'
+        response['Access-Control-Expose-Headers'] = 'X-History-ID, X-Session-ID, X-File-Names, X-Page-Numbers'
+
+        return response
+
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def file_upload_view(request):
+    uploaded_file = request.FILES.get('file')
+    user_name = request.user.username
+    with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(uploaded_file.name)[1]) as temp_file:   
+        temp_file.write(uploaded_file.read())           
+        temp_file_path = temp_file.name
+    faiss_response = file_process.create_faiss_index(temp_file_path,user_name)
+    return JsonResponse({"message": "File uploaded successfully","temp_file_path": temp_file_path,"faiss_response": faiss_response})
+ 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_prompt_history(request):
+    
+    today = timezone.now().date()
+    yesterday = today - timedelta(days=1)
+    last_week = today - timedelta(weeks=1)
+    last_month = today - timedelta(weeks=4)
+    def get_first_prompts(queryset):
+        first_prompts = queryset.values('session_id').annotate(first_prompt_id=Min('id'))
+        return PromptHistory.objects.filter(id__in=[fp['first_prompt_id'] for fp in first_prompts])
+    usernames_entry = User.objects.get(username=request.user.username)
+    user_prompts = PromptHistory.objects.filter(user=usernames_entry)
+    history_today = get_first_prompts(user_prompts.filter(created_at__date=today))
+    history_yesterday = get_first_prompts(user_prompts.filter(created_at__date=yesterday))
+    history_last_week = get_first_prompts(user_prompts.filter(created_at__gte=last_week, created_at__lt=yesterday))
+    history_last_month = get_first_prompts(user_prompts.filter(created_at__gte=last_month, created_at__lt=last_week))
+    history_data = {
+        "today": PromptHistorySerializer(history_today.order_by('-created_at'), many=True).data,
+        "yesterday": PromptHistorySerializer(history_yesterday.order_by('-created_at'), many=True).data,
+        "last_week": PromptHistorySerializer(history_last_week.order_by('-created_at'), many=True).data,
+        "last_month": PromptHistorySerializer(history_last_month.order_by('-created_at'), many=True).data
+    }
+
+    return Response(history_data)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_session_history(request, session_id):
+   
+    try:
+        usernames_entry = User.objects.get(username=request.user.username)
+        
+        history = PromptHistory.objects.filter(user=usernames_entry, session_id=session_id)
+        if not history.exists():
+            return Response({'error': 'No history found for this session'}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = PromptHistorySerializer(history, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def save_comment(request, pk):
+    try:
+        usernames_entry = User.objects.get(username=request.user.username)
+        
+        prompt_history = PromptHistory.objects.get(pk=pk, user=usernames_entry)
+        comment = request.data.get('comments', '')
+        if comment:
+            prompt_history.comments = comment
+            prompt_history.save()
+            return Response({"message": "Comment saved successfully"}, status=status.HTTP_200_OK)
+        else:
+            return Response({"message": "No comment provided"}, status=status.HTTP_204_NO_CONTENT)
+
+    except PromptHistory.DoesNotExist:
+        return Response({"error": "Prompt history not found or unauthorized"}, status=status.HTTP_404_NOT_FOUND)
+    
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def mark_satisfied_or_unsatisfied(request, pk):
+    """
+    Mark the feedback as unsatisfied or satisfied.
+    """
+    try:
+     
+        feedback_status = request.data.get('status')
+        usernames_entry = User.objects.get(username=request.user.username)
+        prompt_history = PromptHistory.objects.get(pk=pk, user=usernames_entry)
+        print("Feedback_status",feedback_status)
+        prompt_history.thumbs_feedback = feedback_status
+        prompt_history.save()
+        
+        return Response({"message": "Feedback marked as unsatisfied."}, status=status.HTTP_200_OK)
+    
+    except PromptHistory.DoesNotExist:
+        return Response({"error": "Prompt history not found or unauthorized."}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_files(request):
+    files = get_all_files_from_milvus()  
+    return JsonResponse({"files":files}) 
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_documents(request):
+    try:
+        current_collection = CurrentUsingCollection.objects.first()  
+        collection_name=current_collection.current_using_collection
+        if not collection_name:
+            return JsonResponse({'error': 'No current collection found'}, status=404)
+        table_name = f"user_access_{collection_name}"
+        with connection.cursor() as cursor:
+            query = f"SELECT document_name FROM {table_name}"
+            cursor.execute(query)
+            documents = cursor.fetchall()
+        if documents:
+            file_names = [doc[0] for doc in documents]
+            return JsonResponse({'files': file_names, "username":request.user.username,}, status=200)
+        else:
+            return JsonResponse({'error': 'No documents found for this ps_number'}, status=404)
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_folder_name(request):
+    try:
+        current_collection = CurrentUsingCollection.objects.first()  
+        collection_name=current_collection.current_using_collection
+        if not collection_name:
+            return JsonResponse({'error': 'No current collection found'}, status=404)
+        table_name = f"user_access_{collection_name}"
+        with connection.cursor() as cursor:
+            query = f"SELECT document_name FROM {table_name}"
+            cursor.execute(query)
+            documents = cursor.fetchall()
+        if documents:
+            file_names = ["/".join(doc[0].split("/")[:-1]) for doc in documents]
+            return JsonResponse({'files': file_names,}, status=200)
+        else:
+            return JsonResponse({'error': 'No documents found for this ps_number'}, status=404)
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def serve_file(request, filename, page_number):
+    try:
+        filename = unquote(filename)
+        file_path = None
+
+        for root, dirs, files in os.walk(PDF_DIRECTORY):
+            if filename in files:
+                file_path = os.path.join(root, filename)
+                break
+
+        if not file_path:
+            raise Http404("File not found")
+
+        file_extension = os.path.splitext(filename)[1].lower()
+        mime_type, _ = mimetypes.guess_type(file_path)
+
+        if file_extension == ".docx":
+            mime_type = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+        if not mime_type:
+            mime_type = "application/octet-stream"
+        
+        file = open(file_path, 'rb')
+        response = FileResponse(file, content_type=mime_type)
+
+        if file_extension in [".pdf", ".docx"]:
+            response['Content-Disposition'] = f'inline; filename="{filename}"'
+        else:
+            response['Content-Disposition'] = f'attachment; filename="{filename}"'
+        return response
+    except Exception as e:
+        raise Http404(f"An error occurred: {str(e)}")
+
+
+'''
+ Admin panel starts here
+
+'''
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_collection_name(request):
+    try:
+        collections = client.list_collections()
+        return JsonResponse({"collections": collections, 'username': request.user.username}, status=200)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def collection_files(request, collection_name):
+    if request.method == 'GET':
+        try:
+            connections.connect("default", host=host, port= port)
+            collection = Collection(collection_name)
+            iterator = collection.query_iterator(batch_size=1000, output_fields=["source"])
+            results = []
+            while True:
+                result = iterator.next()
+                if not result:
+                    iterator.close()
+                    break
+                results.extend(result)
+            results = list(set([result['source'] for result in results]))
+            return JsonResponse({"results": results}, status=200)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+    return JsonResponse({"error": "Invalid request method"}, status=405)
+
+
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated]) 
+def delete_collection(request, collection_name):
+    try:
+        client.drop_collection(collection_name)
+        connection = db_utility.create_connection()
+        cursor = connection.cursor()
+        table_name = f"user_access_{collection_name}"
+        drop_table_query = f"DROP TABLE IF EXISTS `{table_name}`;"  
+        cursor.execute(drop_table_query)
+        connection.commit()
+        cursor.close()
+        connection.close()        
+        return JsonResponse({"message": f"Collection '{collection_name}' deleted successfully."}, status=200)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)
+
+
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated]) 
+def delete_file(request, source, collection_name):
+    if request.method == 'DELETE':
+        try:
+           
+            if not source or not collection_name:
+                return JsonResponse({"error": "Both 'source' and 'collection_name' are required"}, status=400)
+            connections.connect("default", host=host, port= port)
+            collection = Collection(collection_name)
+            decoded_source = urllib.parse.unquote(source)
+            delete_expr = f"source == '{decoded_source}'" 
+            result = collection.delete(expr=delete_expr)
+            connection = db_utility.create_connection()
+            cursor = connection.cursor()
+            delete_row_query = f"DELETE FROM `user_access_{collection_name}` WHERE document_name = %s;"
+            cursor.execute(delete_row_query, (decoded_source,))
+            connection.commit()
+            cursor.close()
+            connection.close()
+            if result.delete_count > 0:
+                return JsonResponse({"message": f"All files with source '{source}' deleted successfully"}, status=200)
+            else:
+                return JsonResponse({"error": "No files found with the specified source name"}, status=404)
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+
+    return JsonResponse({"error": "Invalid request method"}, status=405)
+
+
+def set_progress_message(message):
+    """
+    Update the global progress message
+    """
+    global progress_data
+    progress_data["message"] = message
+
+
+# Helper function to find files in the source folder
+def find_files(root_dir, extensions):
+    found_files = []
+    for dirpath, _, _ in os.walk(root_dir):
+        for ext in extensions:
+            for filepath in glob.glob(os.path.join(dirpath, '*' + ext)):
+                found_files.append(filepath)
+    return found_files
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def create_collection(request):
+    collection_name = request.data.get('name')
+    source = request.data.get('source')
+    if not collection_name or not source:
+        return JsonResponse({"error": "Collection name and source are required."}, status=400)
+    try:
+        logger.info(f"Starting collection creation for {collection_name}.")
+        start_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        if collection_name in client.list_collections():
+            logger.info(f"Collection {collection_name} already exists. Skipping creation.")
+            set_progress_message(f"Collection {collection_name} already exists. Skipping creation.")
+        else:
+            logger.info(f"Creating new collection: {collection_name}")
+        set_progress_message(f"Creating collection: {collection_name}")
+
+        already_chunked = db_utility.fetch_all_documents(collection_name)
+        file_extensions = config('EXTENSIONS')
+        found_files = find_files(source, file_extensions)
+
+        needs_to_be_chunked = [file for file in found_files if file not in already_chunked]
+        needs_to_be_chunked = list(set(needs_to_be_chunked))
+        if needs_to_be_chunked:
+            progress_generator = file_process.create_langchain_documents(needs_to_be_chunked, collection_name)
+
+            for progress in progress_generator:
+                progress_message = f"Progress: {progress['current_progress']} Files completed /  Total files  {progress['total_files']}   -   {progress['progress_percentage']:.2f}%"
+                set_progress_message(progress_message)
+
+        else:
+            set_progress_message("No new files to process.")
+        
+        logger.info(f"File process completed.")
+        # Insert into chunking monitor
+        end_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        insert_query_chunking_monitor = f"""
+            INSERT INTO chunking_monitor (start_time, completed_time, logging_file, chunked_folder, database_name)
+            VALUES ('{start_time}', '{end_time}', '{start_time}_logs.log','{collection_name}', '{source}')
+        """
+        db_utility.insert_chunking_monitor(insert_query_chunking_monitor)
+
+        set_progress_message(f"Collection {collection_name} created successfully.")
+        set_progress_message("Upload completed.")
+        return JsonResponse({"message": "Collection creation completed."}, status=200)
+
+    except Exception as e:
+        logger.error(f"Error during collection creation: {str(e)}")
+        set_progress_message(f"Error occurred: {str(e)}")
+        return JsonResponse({"error": str(e)}, status=500)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_progress(request):
+    return JsonResponse(progress_data)
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated]) 
+def get_milvus_data(request, collection_name):
+    try:
+        connections.connect("default", host=host, port= port)
+        page = request.GET.get("page", 1)
+        try:
+            page = int(page)
+            if page < 1:
+                return Response({"error": "Invalid page number"}, status=status.HTTP_400_BAD_REQUEST)
+        except ValueError:
+            return Response({"error": "Page number must be an integer"}, status=status.HTTP_400_BAD_REQUEST)
+
+        page_size = 150
+        offset = (page - 1) * page_size
+
+        try:
+            collection = Collection(name=collection_name)
+            collection.load()
+        except Exception as e:
+            return Response({"error": f"Failed to load collection: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        try:
+            results = collection.query(
+                expr="",  
+                output_fields=["source", "page", "text", "pk"],
+                offset=offset,
+                limit=page_size,
+            )
+
+            if not results:
+                return Response({
+                    "data": [],
+                    "page": page,
+                    "page_size": page_size,
+                    "next_page": None 
+                }, status=status.HTTP_200_OK)
+
+        except Exception as e:
+            return Response({"error": f"Error querying Milvus: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        next_page = page + 1 if len(results) == page_size else None
+
+        response_data = {
+            "data": results,
+            "page": page,
+            "page_size": page_size,
+            "next_page": next_page
+        }
+        return JsonResponse(response_data, safe=False)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated]) 
+def get_current_using_collection(request):
+    try:
+        current_collection = CurrentUsingCollection.objects.first() 
+        if current_collection:
+            serializer = CurrentUsingCollectionSerializer(current_collection)
+            return Response(serializer.data)
+        else:
+            return Response({"message": "No collection selected"}, status=404)
+    except Exception as e:
+        return Response({"error": f"Error fetching current collection: {str(e)}"}, status=500)
+
+
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated]) 
+def update_current_collection(request):
+
+    current_collection = request.data.get("current_using_collection")
+    if not current_collection:
+        return Response({"error": "No collection selected"}, status=400)
+
+    current_collection_instance, created = CurrentUsingCollection.objects.update_or_create(
+        defaults={"current_using_collection": current_collection}
+    )
+    
+    global_collection_name = current_collection_instance.current_using_collection
+    return Response({
+        "message": "Collection updated successfully", 
+        "current_using_collection": global_collection_name
+    }, status=200)
+
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated]) 
+def restart_server(request):
+    if request.method == 'GET':
+        try:
+            subprocess.Popen(['python3', 'manage.py', 'runserver', '0.0.0.0:8000'])
+
+            pid = os.getpid()
+            os.kill(pid, 9) 
+
+            return JsonResponse({'message': 'Server restarting...'})
+        except Exception as e:
+            return JsonResponse({'message': f'Error: {str(e)}'}, status=500)
+    else:
+        return JsonResponse({'message': 'Method not allowed'}, status=405)
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path('cohere/generate/', cohere_generate, name='cohere_generate'),
+    path('history/', get_prompt_history, name='get_saved_prompts'),
+    path('history/<str:session_id>/', get_session_history, name='get_session_history'),  
+    path('login/', login_user, name='login'),
+    path('logout/', logout_user, name='logout'),
+    path('token/refresh/', refresh_access_token, name='token-refresh'),
+    path('upload_file_from_the_user/',file_upload_view),
+    path('save-comment/<int:pk>/',save_comment, name='save-comment'),
+    path('mark_satisfied_or_unsatisfied/<int:pk>/', mark_satisfied_or_unsatisfied, name='mark_unsatisfied'),
+    path('documents/', get_documents),
+    path('get-folder/',get_folder_name),
+    path('serve-file/<path:filename>/<int:page_number>/', serve_file, name='serve_pdf'),
+    path('collections/', get_collection_name, name='get_collections'),
+    path('collections/<str:collection_name>/files/', collection_files, name='collection-files'),
+    path('collections/<str:collection_name>/delete/', delete_collection, name='delete-collection'),
+    path('collections/file-delete/<path:source>/<str:collection_name>/', delete_file, name='delete_file'),
+    path('collections/create_collection/', create_collection, name='create_collection'),
+    path('collections/progress/', get_progress, name='get_progress'),
+    path("milvus-data/<str:collection_name>/", get_milvus_data, name="milvus-data"),
+    path('current-using-collection/', get_current_using_collection, name='get-current-using-collection'),
+    path("update-current-collection/", update_current_collection, name="update-current-collection"),
+    path('restart-server/', restart_server, name='restart_server'),
+    path('api/cohere_generate/', cohere_generate, name='cohere_generate'),  
+    path('api/chat_generate/', chat_generate, name='chat_generate'), 
+]
+
+in the above code after login user has 3 options as of now if he  selects the qa then the chatbot should access rag and the milvus for the context from selected documents whereas if he just selects the chat then the chatbot should behave like a generic chatbot and only upload file function so update the code accordingly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Uncaught runtime errors:
+×
+ERROR
+useState is not defined
+ReferenceError: useState is not defined
+    at MainContent (http://localhost:3002/static/js/bundle.js:1366:31)
+    at renderWithHooks (http://localhost:3002/static/js/bundle.js:29998:22)
+    at mountIndeterminateComponent (http://localhost:3002/static/js/bundle.js:33969:17)
+    at beginWork (http://localhost:3002/static/js/bundle.js:35272:20)
+    at HTMLUnknownElement.callCallback (http://localhost:3002/static/js/bundle.js:20254:18)
+    at Object.invokeGuardedCallbackDev (http://localhost:3002/static/js/bundle.js:20298:20)
+    at invokeGuardedCallback (http://localhost:3002/static/js/bundle.js:20355:35)
+    at beginWork$1 (http://localhost:3002/static/js/bundle.js:40253:11)
+    at performUnitOfWork (http://localhost:3002/static/js/bundle.js:39501:16)
+    at workLoopSync (http://localhost:3002/static/js/bundle.js:39424:9)
+ERROR
+useState is not defined
+ReferenceError: useState is not defined
+    at MainContent (http://localhost:3002/static/js/bundle.js:1366:31)
+    at renderWithHooks (http://localhost:3002/static/js/bundle.js:29998:22)
+    at mountIndeterminateComponent (http://localhost:3002/static/js/bundle.js:33969:17)
+    at beginWork (http://localhost:3002/static/js/bundle.js:35272:20)
+    at HTMLUnknownElement.callCallback (http://localhost:3002/static/js/bundle.js:20254:18)
+    at Object.invokeGuardedCallbackDev (http://localhost:3002/static/js/bundle.js:20298:20)
+    at invokeGuardedCallback (http://localhost:3002/static/js/bundle.js:20355:35)
+    at beginWork$1 (http://localhost:3002/static/js/bundle.js:40253:11)
+    at performUnitOfWork (http://localhost:3002/static/js/bundle.js:39501:16)
+    at workLoopSync (http://localhost:3002/static/js/bundle.js:39424:9)
+ERROR
+useState is not defined
+ReferenceError: useState is not defined
+    at MainContent (http://localhost:3002/static/js/bundle.js:1366:31)
+    at renderWithHooks (http://localhost:3002/static/js/bundle.js:29998:22)
+    at mountIndeterminateComponent (http://localhost:3002/static/js/bundle.js:33969:17)
+    at beginWork (http://localhost:3002/static/js/bundle.js:35272:20)
+    at beginWork$1 (http://localhost:3002/static/js/bundle.js:40231:18)
+    at performUnitOfWork (http://localhost:3002/static/js/bundle.js:39501:16)
+    at workLoopSync (http://localhost:3002/static/js/bundle.js:39424:9)
+    at renderRootSync (http://localhost:3002/static/js/bundle.js:39397:11)
+    at recoverFromConcurrentError (http://localhost:3002/static/js/bundle.js:38889:24)
+    at performSyncWorkOnRoot (http://localhost:3002/static/js/bundle.js:39098:24)
+
+
+
+
+

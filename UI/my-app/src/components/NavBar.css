@@ -1,0 +1,150 @@
+/* NavBar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  background-color: rgba(216, 215, 222, 0.103); 
+  backdrop-filter: blur(10px);              
+  margin-top: 20px;
+  height: 70px;
+ 
+  }
+  
+.header-title {
+    font-size: 22px;
+    margin-left: 10px;
+    color: #1b254b; 
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+b{
+  font-size: 25px;
+}
+.sub-head{
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.header-subtext {
+  font-size: 12px;
+  font-weight: normal;
+  color: #1b254b; 
+}
+
+.aicoe-logo{
+  height: 35px;
+  margin-right: 10px;
+
+}
+
+.header-sub {
+  font-size: 17px;
+  font-weight: normal;
+}
+
+
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Container for the entire search bar */
+.search-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 30px; 
+  padding: 5px 15px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  width: 80px;
+  height: 50px; 
+}
+
+.search-input-group {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.search-icon {
+  color: #9ca3af;
+  font-size: 16px; 
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background-color: #f1f2f6;
+  border-radius: 20px; 
+  padding: 8px 15px; 
+  color: #6b7280;
+  width: 150px; 
+  font-size: 14px; 
+}
+
+.search-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  color: #6b7280;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 35px; 
+  height: 35px;
+  background: linear-gradient(40.46deg,#4A25E1 26.3%, #7B5AFF 86.4%);
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; 
+  font-weight: bold;
+  font-size: 14px;
+
+}
+
+/* dark mode  */
+
+
+.dark-mode .header-title{
+  color: #fff;
+}
+
+.dark-mode .header-subtext{
+  color: #fff;
+
+}
+
+.dark-mode .search-bar-container{
+  background-color: #1b254b;
+}
+.dark-mode .search-input {
+  background-color: rgba(209, 207, 228, 0.103); 
+  color: #fff;
+}
+
+.dark-mode .search-icon {
+  color: #fff;
+}
+
+.dark-mode .icon {
+  color: #fff;
+}
+
+.dark-mode .user-avatar {
+  background-color: #333333;
+}
+
+.dark-mode .navbar {
+  background-color: rgba(209, 207, 228, 0.103);  
+  color: #fff;
+}

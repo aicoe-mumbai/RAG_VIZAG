@@ -1,0 +1,71 @@
+/* Landing page container */
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;  /* Light background similar to login page */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Landing content box */
+.landing-content {
+  background-color: #fff; /* White background for the content box */
+  padding: 40px 60px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Limit width on large screens */
+}
+
+/* Heading */
+.landing-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333; /* Dark text color for the heading */
+}
+
+/* Description text */
+.landing-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #666; /* Lighter text color for description */
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Button styling */
+.landing-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: linear-gradient(40.46deg, #4A25E1 26.3%, #7B5AFF 86.4%); /* Gradient similar to login button */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 180px;
+  margin: 10px;
+}
+
+.landing-button:hover {
+  background: linear-gradient(40.46deg, #391ea3 26.3%, #7057d3 86.4%); /* Darker gradient on hover */
+  transform: scale(1.05);
+}
+
+.landing-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #7B5AFF; /* Light purple shadow on focus */
+}
+
+.landing-button:active {
+  transform: scale(0.98); /* Slight shrink when clicked */
+}

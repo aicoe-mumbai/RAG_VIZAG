@@ -1,0 +1,133 @@
+/* MainContent.css */
+.main-container {
+  flex: 1;
+  background-color: #f2f2f4;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 8px 10px rgba(85, 85, 120, 0.2);
+  overflow-y: auto;
+}
+
+.logo-container {
+
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 180px);
+}
+
+.saarthi-logo {
+  font-size: 80px;
+  font-weight: bold;
+  padding: 200px 350px;
+  background: linear-gradient(40.46deg, #8C66FF 26.3%, #C9A3FF 86.4%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.thinking-container {
+  margin-top: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.thinking-indicator {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.thinking-content {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+
+.responses-list {
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.response-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  padding-bottom: 5px;
+  margin: 0px 250px 20px 200px;
+  box-shadow: 10px 10px 15px rgba(128, 100, 230, 0.2);
+  height: fit-content;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  justify-content: center;
+  font-size: 18px;
+  color: #1b254b;
+  
+}
+
+.prompt-card{
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0px 150px 0px 350px;
+  box-shadow: 10px 10px 15px rgba(128, 100, 230, 0.2);
+  height: fit-content;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  justify-content: center;
+  font-size: 18px;
+  color: #1b254b;
+}
+
+
+.disclaimer {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-top: 10px;
+  position: fixed;
+  bottom: 7px;
+  width: 80%;
+}
+
+.card-cointainer {
+  display: flex;
+  width: 100%;
+}
+
+
+
+
+
+/* dark mode */
+
+.dark-mode .main-container {
+  background: linear-gradient(90deg, #1b254b, #374177, #1b254b);
+}
+
+.dark-mode .saarthi-logo{
+  color: #fff;
+}
+
+.dark-mode .disclaimer{
+  color: #fff;
+}
+
+.dark-mode .response-card{
+  background-color: rgba(209, 207, 228, 0.103); 
+  color: #fff
+}
+
+.dark-mode .prompt-card{
+  background-color: rgba(209, 207, 228, 0.103); 
+  color: #fff
+}
+

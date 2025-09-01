@@ -1,0 +1,3 @@
+2025-07-03 15:45:48,827 - document_processor - INFO - file_process_new.py:60 - Document processor module initialized
+2025-07-15 17:42:12,744 - document_processor - ERROR - file_process_new.py:153 - Error extracting OCR text from /tmp/tmp4bano_hv.pdf: HTTP Error 407: authenticationrequired
+2025-07-15 17:42:42,817 - document_processor - ERROR - file_process_new.py:153 - Error extracting OCR text from /tmp/tmpjqssgd1k.pdf: HTTP Error 407: authenticationrequired

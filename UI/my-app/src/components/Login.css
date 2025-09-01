@@ -1,0 +1,102 @@
+
+   .login-page {
+    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+   
+  .login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+   
+  .login-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+   
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+   
+  .input-field {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+  }
+   
+  .input-field:focus {
+    border-color: #007bff;
+  }
+   
+  .password-field-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+   
+  .password-toggle-btn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #888;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  .password-eye {
+    font-size: 18px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+   
+  .password-eye:hover {
+    opacity: 1;
+  }
+   
+  .password-eye-slash {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+   
+  .submit-btn {
+    padding: 12px;
+    background: linear-gradient(40.46deg,#4A25E1 26.3%, #7B5AFF 86.4%);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+   
+  .submit-btn:hover {
+    background: linear-gradient(40.46deg,#391ea3 26.3%, #7057d3 86.4%);
+  }
+   
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }

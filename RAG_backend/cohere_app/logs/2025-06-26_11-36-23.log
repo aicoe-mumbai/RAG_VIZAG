@@ -1,0 +1,2 @@
+2025-06-26 11:36:23,002 - document_processor - INFO - file_process_new.py:60 - Document processor module initialized
+2025-06-26 16:27:22,695 - document_processor - ERROR - file_process_new.py:153 - Error extracting OCR text from /tmp/tmpb8ixx419.pdf: HTTP Error 407: authenticationrequired

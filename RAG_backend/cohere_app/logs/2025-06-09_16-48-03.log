@@ -1,0 +1,637 @@
+2025-06-09 16:48:03,284 - document_processor - INFO - file_process_new.py:60 - Document processor module initialized
+2025-06-09 16:50:13,731 - document_processor - INFO - file_process_new.py:614 - -------- SYSTEM INFORMATION --------
+2025-06-09 16:50:13,731 - document_processor - INFO - file_process_new.py:615 - Python version: 3.10.17
+2025-06-09 16:50:13,731 - document_processor - INFO - file_process_new.py:616 - OS: Linux-5.15.0-139-generic-x86_64-with-glibc2.31
+2025-06-09 16:50:13,731 - document_processor - INFO - file_process_new.py:617 - ------------------------------------
+2025-06-09 16:50:13,731 - document_processor - INFO - file_process_new.py:605 - HEARTBEAT: Processing collection: QL
+2025-06-09 16:50:13,749 - document_processor - INFO - file_process_new.py:645 - Starting processing 47 files with 4 workers
+2025-06-09 16:50:13,749 - document_processor - INFO - file_process_new.py:647 - Processing collection: QL
+2025-06-09 16:50:13,749 - document_processor - INFO - file_process_new.py:648 - Total files to process: 47
+2025-06-09 16:50:13,749 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-103-01 Continual Improvement R0.pdf
+2025-06-09 16:50:13,750 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-WE&M-PRO-QOP-85-06 Welding Engineering and Metallurgy- Planning and Execution R0 Dt. 01.04.2024.pdf
+2025-06-09 16:50:13,787 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-103-01 Continual Improvement R0.pdf processing result: Text extraction done
+2025-06-09 16:50:13,787 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-86-01 Final Verification and Release of Product R0.pdf
+2025-06-09 16:50:13,800 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 3
+2025-06-09 16:50:13,800 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/Heat Treatment Principles.pdf
+2025-06-09 16:50:13,848 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-WE&M-PRO-QOP-85-06 Welding Engineering and Metallurgy- Planning and Execution R0 Dt. 01.04.2024.pdf processing result: Text extraction done
+2025-06-09 16:50:13,851 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-86-01 Final Verification and Release of Product R0.pdf processing result: Text extraction done
+2025-06-09 16:50:13,851 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-09 16:50:13,889 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 5
+2025-06-09 16:50:13,900 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 3
+2025-06-09 16:50:13,931 - document_processor - INFO - file_process_new.py:458 - Created 8 chunks
+2025-06-09 16:50:13,944 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 5 pages...
+2025-06-09 16:50:13,950 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-09 16:50:13,987 - document_processor - INFO - file_process_new.py:535 - Created 8 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-103-01 Continual Improvement R0.pdf
+2025-06-09 16:50:13,999 - document_processor - INFO - file_process_new.py:458 - Created 18 chunks
+2025-06-09 16:50:14,009 - document_processor - INFO - file_process_new.py:458 - Created 10 chunks
+2025-06-09 16:50:14,020 - document_processor - INFO - file_process_new.py:551 - Inserting 8 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-103-01 Continual Improvement R0.pdf
+2025-06-09 16:50:14,060 - document_processor - INFO - file_process_new.py:535 - Created 18 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-WE&M-PRO-QOP-85-06 Welding Engineering and Metallurgy- Planning and Execution R0 Dt. 01.04.2024.pdf
+2025-06-09 16:50:14,072 - document_processor - INFO - file_process_new.py:535 - Created 10 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-86-01 Final Verification and Release of Product R0.pdf
+2025-06-09 16:50:14,119 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 8 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:14,131 - document_processor - INFO - file_process_new.py:551 - Inserting 18 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-WE&M-PRO-QOP-85-06 Welding Engineering and Metallurgy- Planning and Execution R0 Dt. 01.04.2024.pdf
+2025-06-09 16:50:14,164 - document_processor - INFO - file_process_new.py:551 - Inserting 10 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-86-01 Final Verification and Release of Product R0.pdf
+2025-06-09 16:50:14,214 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 18 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:14,220 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:14,244 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,274 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 8 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:14,322 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,330 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 18 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:14,376 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,381 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:14,382 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,396 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 8 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:14,446 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,446 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,447 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 18 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:14,464 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,473 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:14,520 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,521 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,547 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,576 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,577 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PMG-PRO-QOP-81-01 Planning and Monitoring Of Project Execution R0.pdf
+2025-06-09 16:50:14,577 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:14,584 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-01 Evaluation and approval of external providers R0.pdf
+2025-06-09 16:50:14,629 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PMG-PRO-QOP-81-01 Planning and Monitoring Of Project Execution R0.pdf processing result: Text extraction done
+2025-06-09 16:50:14,694 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PRODSTR-PRO-QOP-85-02 Property Belonging to customers R0.pdf
+2025-06-09 16:50:14,705 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 4
+2025-06-09 16:50:14,772 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-09 16:50:14,797 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-01 Evaluation and approval of external providers R0.pdf processing result: Text extraction done
+2025-06-09 16:50:14,807 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PRODSTR-PRO-QOP-85-02 Property Belonging to customers R0.pdf processing result: Text extraction done
+2025-06-09 16:50:14,807 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 8
+2025-06-09 16:50:14,808 - document_processor - INFO - file_process_new.py:458 - Created 13 chunks
+2025-06-09 16:50:14,845 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 5
+2025-06-09 16:50:14,856 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-09 16:50:14,867 - document_processor - INFO - file_process_new.py:535 - Created 13 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PMG-PRO-QOP-81-01 Planning and Monitoring Of Project Execution R0.pdf
+2025-06-09 16:50:14,885 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 5 pages...
+2025-06-09 16:50:14,887 - document_processor - INFO - file_process_new.py:458 - Created 23 chunks
+2025-06-09 16:50:14,912 - document_processor - INFO - file_process_new.py:551 - Inserting 13 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PMG-PRO-QOP-81-01 Planning and Monitoring Of Project Execution R0.pdf
+2025-06-09 16:50:14,919 - document_processor - INFO - file_process_new.py:458 - Created 15 chunks
+2025-06-09 16:50:14,924 - document_processor - INFO - file_process_new.py:535 - Created 23 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-01 Evaluation and approval of external providers R0.pdf
+2025-06-09 16:50:14,961 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 13 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:14,978 - document_processor - INFO - file_process_new.py:535 - Created 15 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PRODSTR-PRO-QOP-85-02 Property Belonging to customers R0.pdf
+2025-06-09 16:50:15,014 - document_processor - INFO - file_process_new.py:551 - Inserting 23 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-01 Evaluation and approval of external providers R0.pdf
+2025-06-09 16:50:15,014 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/Heat Treatment Principles.pdf processing result: Text extraction done
+2025-06-09 16:50:15,016 - document_processor - INFO - file_process_new.py:551 - Inserting 15 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PRODSTR-PRO-QOP-85-02 Property Belonging to customers R0.pdf
+2025-06-09 16:50:15,016 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 23 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:15,017 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,017 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 398
+2025-06-09 16:50:15,017 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 15 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:15,018 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 13 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:15,019 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 398 pages...
+2025-06-09 16:50:15,021 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,032 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,043 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,058 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 23 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:15,069 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 15 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:15,069 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 13 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:15,081 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,117 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 23 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:15,121 - document_processor - INFO - file_process_new.py:458 - Created 1998 chunks
+2025-06-09 16:50:15,123 - document_processor - INFO - file_process_new.py:535 - Created 1998 chunks from /home/qa-prod/Documents/QA_docs/Heat Treatment Principles.pdf
+2025-06-09 16:50:15,124 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,129 - document_processor - INFO - file_process_new.py:551 - Inserting 1998 documents into Milvus for /home/qa-prod/Documents/QA_docs/Heat Treatment Principles.pdf
+2025-06-09 16:50:15,129 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 15 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:15,130 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,130 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 1998 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:15,131 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,131 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,133 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,133 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,134 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,135 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,135 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 1998 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:15,137 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,138 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 1998 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:15,150 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PMG-PRO-QOP-81-05 Operational Risk Management R0.pdf
+2025-06-09 16:50:15,151 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-14 First Article Inspection R0.pdf
+2025-06-09 16:50:15,152 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-63-01 Management of Change R0.pdf
+2025-06-09 16:50:15,153 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,166 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PMG-PRO-QOP-81-05 Operational Risk Management R0.pdf processing result: Text extraction done
+2025-06-09 16:50:15,224 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,245 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-14 First Article Inspection R0.pdf processing result: Text extraction done
+2025-06-09 16:50:15,251 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 2
+2025-06-09 16:50:15,266 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-63-01 Management of Change R0.pdf processing result: Text extraction done
+2025-06-09 16:50:15,284 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 8
+2025-06-09 16:50:15,284 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 2 pages...
+2025-06-09 16:50:15,284 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 8
+2025-06-09 16:50:15,285 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-09 16:50:15,285 - document_processor - INFO - file_process_new.py:458 - Created 5 chunks
+2025-06-09 16:50:15,286 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-09 16:50:15,288 - document_processor - INFO - file_process_new.py:458 - Created 28 chunks
+2025-06-09 16:50:15,289 - document_processor - INFO - file_process_new.py:535 - Created 5 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PMG-PRO-QOP-81-05 Operational Risk Management R0.pdf
+2025-06-09 16:50:15,295 - document_processor - INFO - file_process_new.py:551 - Inserting 5 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PMG-PRO-QOP-81-05 Operational Risk Management R0.pdf
+2025-06-09 16:50:15,295 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 5 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:15,294 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/Root_Cause_Failure_Analysis_A_Guide_to_Improve_Plant_Trinath_Sahoo.pdf
+2025-06-09 16:50:15,291 - document_processor - INFO - file_process_new.py:535 - Created 28 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-14 First Article Inspection R0.pdf
+2025-06-09 16:50:15,291 - document_processor - INFO - file_process_new.py:458 - Created 21 chunks
+2025-06-09 16:50:15,297 - document_processor - INFO - file_process_new.py:535 - Created 21 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-63-01 Management of Change R0.pdf
+2025-06-09 16:50:15,313 - document_processor - INFO - file_process_new.py:551 - Inserting 28 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-14 First Article Inspection R0.pdf
+2025-06-09 16:50:15,319 - document_processor - INFO - file_process_new.py:551 - Inserting 21 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-63-01 Management of Change R0.pdf
+2025-06-09 16:50:15,319 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,331 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 28 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:15,331 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 21 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:15,370 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 5 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:15,399 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,420 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 28 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:15,437 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,443 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 21 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:15,449 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,467 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 5 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:15,467 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,507 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 28 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:15,540 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,559 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 21 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:15,573 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,590 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,597 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,603 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,646 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,665 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:15,684 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-61-01 Risk Opportunity Analysis  planning R0.pdf
+2025-06-09 16:50:15,734 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTHB-A-DT-PRO-QOP-85-15 Documentation and Training R0.pdf
+2025-06-09 16:50:15,742 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-05 Planning for Execution on Shop Floor Rev0.pdf
+2025-06-09 16:50:15,841 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-61-01 Risk Opportunity Analysis  planning R0.pdf processing result: Text extraction done
+2025-06-09 16:50:15,841 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTHB-A-DT-PRO-QOP-85-15 Documentation and Training R0.pdf processing result: Text extraction done
+2025-06-09 16:50:15,885 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-05 Planning for Execution on Shop Floor Rev0.pdf processing result: Text extraction done
+2025-06-09 16:50:15,901 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 6
+2025-06-09 16:50:15,907 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 4
+2025-06-09 16:50:15,939 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 2
+2025-06-09 16:50:15,952 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 6 pages...
+2025-06-09 16:50:15,986 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-09 16:50:15,993 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 2 pages...
+2025-06-09 16:50:16,000 - document_processor - INFO - file_process_new.py:458 - Created 16 chunks
+2025-06-09 16:50:16,010 - document_processor - INFO - file_process_new.py:458 - Created 9 chunks
+2025-06-09 16:50:16,022 - document_processor - INFO - file_process_new.py:458 - Created 7 chunks
+2025-06-09 16:50:16,023 - document_processor - INFO - file_process_new.py:535 - Created 16 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-61-01 Risk Opportunity Analysis  planning R0.pdf
+2025-06-09 16:50:16,031 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/Root_Cause_Failure_Analysis_A_Guide_to_Improve_Plant_Trinath_Sahoo.pdf processing result: Text extraction done
+2025-06-09 16:50:16,031 - document_processor - INFO - file_process_new.py:535 - Created 9 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTHB-A-DT-PRO-QOP-85-15 Documentation and Training R0.pdf
+2025-06-09 16:50:16,031 - document_processor - INFO - file_process_new.py:535 - Created 7 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-05 Planning for Execution on Shop Floor Rev0.pdf
+2025-06-09 16:50:16,034 - document_processor - INFO - file_process_new.py:551 - Inserting 16 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-61-01 Risk Opportunity Analysis  planning R0.pdf
+2025-06-09 16:50:16,034 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 334
+2025-06-09 16:50:16,035 - document_processor - INFO - file_process_new.py:551 - Inserting 9 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTHB-A-DT-PRO-QOP-85-15 Documentation and Training R0.pdf
+2025-06-09 16:50:16,035 - document_processor - INFO - file_process_new.py:551 - Inserting 7 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-05 Planning for Execution on Shop Floor Rev0.pdf
+2025-06-09 16:50:16,035 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 16 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,036 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 334 pages...
+2025-06-09 16:50:16,036 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 9 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,036 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 7 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,053 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,071 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,071 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 16 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:16,087 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 9 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:16,087 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,109 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,130 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 7 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:16,130 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 16 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:16,131 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,145 - document_processor - INFO - file_process_new.py:458 - Created 1759 chunks
+2025-06-09 16:50:16,146 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 9 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:16,147 - document_processor - INFO - file_process_new.py:535 - Created 1759 chunks from /home/qa-prod/Documents/QA_docs/Root_Cause_Failure_Analysis_A_Guide_to_Improve_Plant_Trinath_Sahoo.pdf
+2025-06-09 16:50:16,147 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,149 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,154 - document_processor - INFO - file_process_new.py:551 - Inserting 1759 documents into Milvus for /home/qa-prod/Documents/QA_docs/Root_Cause_Failure_Analysis_A_Guide_to_Improve_Plant_Trinath_Sahoo.pdf
+2025-06-09 16:50:16,154 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 7 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:16,155 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,155 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,155 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 1759 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,157 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,157 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,159 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,160 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,160 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 1759 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:16,162 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,164 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODESHOP-PRO-QOP-85-08A Execution & Monitoring On Electronics Shop Floor R0.pdf
+2025-06-09 16:50:16,164 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 1759 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:16,176 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-P-A-HR-PRO-QOP-72-01P Competence Management R0.pdf
+2025-06-09 16:50:16,188 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-01 Identification and Traceability R0.pdf
+2025-06-09 16:50:16,192 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODESHOP-PRO-QOP-85-08A Execution & Monitoring On Electronics Shop Floor R0.pdf processing result: Text extraction done
+2025-06-09 16:50:16,211 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,225 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 5
+2025-06-09 16:50:16,234 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-01 Identification and Traceability R0.pdf processing result: Text extraction done
+2025-06-09 16:50:16,243 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-P-A-HR-PRO-QOP-72-01P Competence Management R0.pdf processing result: Text extraction done
+2025-06-09 16:50:16,243 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,243 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 5 pages...
+2025-06-09 16:50:16,243 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 4
+2025-06-09 16:50:16,244 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 6
+2025-06-09 16:50:16,245 - document_processor - INFO - file_process_new.py:458 - Created 18 chunks
+2025-06-09 16:50:16,246 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-09 16:50:16,246 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 6 pages...
+2025-06-09 16:50:16,246 - document_processor - INFO - file_process_new.py:535 - Created 18 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODESHOP-PRO-QOP-85-08A Execution & Monitoring On Electronics Shop Floor R0.pdf
+2025-06-09 16:50:16,247 - document_processor - INFO - file_process_new.py:458 - Created 13 chunks
+2025-06-09 16:50:16,248 - document_processor - INFO - file_process_new.py:458 - Created 22 chunks
+2025-06-09 16:50:16,249 - document_processor - INFO - file_process_new.py:551 - Inserting 18 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODESHOP-PRO-QOP-85-08A Execution & Monitoring On Electronics Shop Floor R0.pdf
+2025-06-09 16:50:16,249 - document_processor - INFO - file_process_new.py:535 - Created 13 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-01 Identification and Traceability R0.pdf
+2025-06-09 16:50:16,251 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs
+2025-06-09 16:50:16,252 - document_processor - INFO - file_process_new.py:535 - Created 22 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-P-A-HR-PRO-QOP-72-01P Competence Management R0.pdf
+2025-06-09 16:50:16,252 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 18 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,252 - document_processor - INFO - file_process_new.py:551 - Inserting 13 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-01 Identification and Traceability R0.pdf
+2025-06-09 16:50:16,252 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs processing result: Unsupported file format: 
+2025-06-09 16:50:16,253 - document_processor - INFO - file_process_new.py:551 - Inserting 22 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-P-A-HR-PRO-QOP-72-01P Competence Management R0.pdf
+2025-06-09 16:50:16,253 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 0
+2025-06-09 16:50:16,254 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 13 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,254 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 22 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,254 - document_processor - WARNING - file_process_new.py:582 - Error processing /home/qa-prod/Documents/QA_docs: Unsupported file format: 
+2025-06-09 16:50:16,255 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,256 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,257 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 18 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:16,257 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 13 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:16,257 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,258 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 22 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:16,258 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,259 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 18 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:16,260 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,261 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-03 Control of MMR R0.pdf
+2025-06-09 16:50:16,261 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 13 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:16,262 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,262 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,284 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-03 Control of MMR R0.pdf processing result: Text extraction done
+2025-06-09 16:50:16,285 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 22 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:16,285 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,285 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,286 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 5
+2025-06-09 16:50:16,286 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,287 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 5 pages...
+2025-06-09 16:50:16,288 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,289 - document_processor - INFO - file_process_new.py:458 - Created 17 chunks
+2025-06-09 16:50:16,289 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,289 - document_processor - INFO - file_process_new.py:535 - Created 17 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-03 Control of MMR R0.pdf
+2025-06-09 16:50:16,291 - document_processor - INFO - file_process_new.py:551 - Inserting 17 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-03 Control of MMR R0.pdf
+2025-06-09 16:50:16,291 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 17 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,293 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-10 Foreign Object Debris (FOD) Prevention Rev0.pdf
+2025-06-09 16:50:16,294 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PTDC & DEC-PRO-QOP-83-01 Design & Development R0.pdf
+2025-06-09 16:50:16,304 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-10 Foreign Object Debris (FOD) Prevention Rev0.pdf processing result: Text extraction done
+2025-06-09 16:50:16,319 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/Root_Cause_Analysis_Improving_Performance_for_Bottom_Line_Robert.pdf
+2025-06-09 16:50:16,319 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 2
+2025-06-09 16:50:16,331 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,376 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PTDC & DEC-PRO-QOP-83-01 Design & Development R0.pdf processing result: Text extraction done
+2025-06-09 16:50:16,391 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 2 pages...
+2025-06-09 16:50:16,409 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 17 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:16,416 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 8
+2025-06-09 16:50:16,430 - document_processor - INFO - file_process_new.py:458 - Created 5 chunks
+2025-06-09 16:50:16,436 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-09 16:50:16,457 - document_processor - INFO - file_process_new.py:535 - Created 5 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-10 Foreign Object Debris (FOD) Prevention Rev0.pdf
+2025-06-09 16:50:16,482 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,484 - document_processor - INFO - file_process_new.py:458 - Created 25 chunks
+2025-06-09 16:50:16,540 - document_processor - INFO - file_process_new.py:551 - Inserting 5 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-10 Foreign Object Debris (FOD) Prevention Rev0.pdf
+2025-06-09 16:50:16,551 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 17 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:16,551 - document_processor - INFO - file_process_new.py:535 - Created 25 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PTDC & DEC-PRO-QOP-83-01 Design & Development R0.pdf
+2025-06-09 16:50:16,551 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 5 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,571 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,581 - document_processor - INFO - file_process_new.py:551 - Inserting 25 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PTDC & DEC-PRO-QOP-83-01 Design & Development R0.pdf
+2025-06-09 16:50:16,597 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,631 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 25 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,641 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,641 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 5 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:16,670 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,671 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-01 Control of Documents R0.pdf
+2025-06-09 16:50:16,691 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,698 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 25 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:16,709 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 5 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:16,801 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-01 Control of Documents R0.pdf processing result: Text extraction done
+2025-06-09 16:50:16,823 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 10
+2025-06-09 16:50:16,823 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,836 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 10 pages...
+2025-06-09 16:50:16,854 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 25 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:16,873 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,880 - document_processor - INFO - file_process_new.py:458 - Created 29 chunks
+2025-06-09 16:50:16,894 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,903 - document_processor - INFO - file_process_new.py:535 - Created 29 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-01 Control of Documents R0.pdf
+2025-06-09 16:50:16,930 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,953 - document_processor - INFO - file_process_new.py:551 - Inserting 29 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-01 Control of Documents R0.pdf
+2025-06-09 16:50:16,953 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,953 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 29 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:16,973 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/Ngnix_config.txt
+2025-06-09 16:50:16,981 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:16,990 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-02 Control of Records R0.pdf
+2025-06-09 16:50:16,990 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 29 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,016 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/Ngnix_config.txt processing result: Text extraction done
+2025-06-09 16:50:17,044 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 1
+2025-06-09 16:50:17,044 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 1 pages...
+2025-06-09 16:50:17,044 - document_processor - INFO - file_process_new.py:458 - Created 2 chunks
+2025-06-09 16:50:17,047 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-02 Control of Records R0.pdf processing result: Text extraction done
+2025-06-09 16:50:17,047 - document_processor - INFO - file_process_new.py:535 - Created 2 chunks from /home/qa-prod/Documents/Ngnix_config.txt
+2025-06-09 16:50:17,056 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 3
+2025-06-09 16:50:17,067 - document_processor - INFO - file_process_new.py:551 - Inserting 2 documents into Milvus for /home/qa-prod/Documents/Ngnix_config.txt
+2025-06-09 16:50:17,073 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,074 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-09 16:50:17,095 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 2 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,125 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 29 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,151 - document_processor - INFO - file_process_new.py:458 - Created 10 chunks
+2025-06-09 16:50:17,189 - document_processor - INFO - file_process_new.py:535 - Created 10 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-02 Control of Records R0.pdf
+2025-06-09 16:50:17,190 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,190 - document_processor - INFO - file_process_new.py:551 - Inserting 10 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-02 Control of Records R0.pdf
+2025-06-09 16:50:17,205 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 2 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,224 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,230 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,267 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,285 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,299 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 2 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,302 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/Root_Cause_Analysis_Improving_Performance_for_Bottom_Line_Robert.pdf processing result: Text extraction done
+2025-06-09 16:50:17,304 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-HR-PRO-QOP-72-01 Competence Management R0.pdf
+2025-06-09 16:50:17,304 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,305 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 260
+2025-06-09 16:50:17,313 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,320 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-HR-PRO-QOP-72-01 Competence Management R0.pdf processing result: Text extraction done
+2025-06-09 16:50:17,320 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,320 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 260 pages...
+2025-06-09 16:50:17,320 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,320 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 3
+2025-06-09 16:50:17,342 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-09 16:50:17,360 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-03 Purchasing R0.pdf
+2025-06-09 16:50:17,360 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,361 - document_processor - INFO - file_process_new.py:458 - Created 10 chunks
+2025-06-09 16:50:17,367 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,396 - document_processor - INFO - file_process_new.py:535 - Created 10 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-HR-PRO-QOP-72-01 Competence Management R0.pdf
+2025-06-09 16:50:17,409 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-03 Purchasing R0.pdf processing result: Text extraction done
+2025-06-09 16:50:17,414 - document_processor - INFO - file_process_new.py:458 - Created 1168 chunks
+2025-06-09 16:50:17,414 - document_processor - INFO - file_process_new.py:551 - Inserting 10 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-HR-PRO-QOP-72-01 Competence Management R0.pdf
+2025-06-09 16:50:17,414 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 6
+2025-06-09 16:50:17,415 - document_processor - INFO - file_process_new.py:535 - Created 1168 chunks from /home/qa-prod/Documents/QA_docs/Root_Cause_Analysis_Improving_Performance_for_Bottom_Line_Robert.pdf
+2025-06-09 16:50:17,415 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,415 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 6 pages...
+2025-06-09 16:50:17,418 - document_processor - INFO - file_process_new.py:551 - Inserting 1168 documents into Milvus for /home/qa-prod/Documents/QA_docs/Root_Cause_Analysis_Improving_Performance_for_Bottom_Line_Robert.pdf
+2025-06-09 16:50:17,418 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,420 - document_processor - INFO - file_process_new.py:458 - Created 15 chunks
+2025-06-09 16:50:17,421 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 1168 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,421 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,421 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,421 - document_processor - INFO - file_process_new.py:535 - Created 15 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-03 Purchasing R0.pdf
+2025-06-09 16:50:17,423 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,423 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,423 - document_processor - INFO - file_process_new.py:551 - Inserting 15 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-03 Purchasing R0.pdf
+2025-06-09 16:50:17,424 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 1168 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,424 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 15 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,425 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,425 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,426 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,427 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,427 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 1168 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,427 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,427 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 15 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,428 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-91-02 Customer Satisfaction R0.pdf
+2025-06-09 16:50:17,429 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,444 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-91-02 Customer Satisfaction R0.pdf processing result: Text extraction done
+2025-06-09 16:50:17,445 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,446 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,446 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 3
+2025-06-09 16:50:17,446 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,446 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 15 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,447 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-09 16:50:17,448 - document_processor - INFO - file_process_new.py:458 - Created 9 chunks
+2025-06-09 16:50:17,448 - document_processor - INFO - file_process_new.py:535 - Created 9 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-91-02 Customer Satisfaction R0.pdf
+2025-06-09 16:50:17,448 - document_processor - INFO - file_process_new.py:551 - Inserting 9 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-91-02 Customer Satisfaction R0.pdf
+2025-06-09 16:50:17,448 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 9 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,449 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,450 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,451 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-11 Packing , Loading & Transportation R0.pdf
+2025-06-09 16:50:17,465 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,466 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/NCR SOP.pdf
+2025-06-09 16:50:17,468 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-02 Order acceptance and Closing R0.pdf
+2025-06-09 16:50:17,476 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-11 Packing , Loading & Transportation R0.pdf processing result: Text extraction done
+2025-06-09 16:50:17,476 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 9 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,516 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 5
+2025-06-09 16:50:17,553 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 5 pages...
+2025-06-09 16:50:17,554 - document_processor - INFO - file_process_new.py:458 - Created 13 chunks
+2025-06-09 16:50:17,556 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-02 Order acceptance and Closing R0.pdf processing result: Text extraction done
+2025-06-09 16:50:17,563 - document_processor - INFO - file_process_new.py:535 - Created 13 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-11 Packing , Loading & Transportation R0.pdf
+2025-06-09 16:50:17,582 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 4
+2025-06-09 16:50:17,589 - document_processor - INFO - file_process_new.py:551 - Inserting 13 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-11 Packing , Loading & Transportation R0.pdf
+2025-06-09 16:50:17,595 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,596 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-09 16:50:17,608 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 13 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,623 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/NCR SOP.pdf processing result: Text extraction done
+2025-06-09 16:50:17,623 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 9 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,624 - document_processor - INFO - file_process_new.py:458 - Created 11 chunks
+2025-06-09 16:50:17,625 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 27
+2025-06-09 16:50:17,626 - document_processor - INFO - file_process_new.py:535 - Created 11 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-02 Order acceptance and Closing R0.pdf
+2025-06-09 16:50:17,626 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 27 pages...
+2025-06-09 16:50:17,626 - document_processor - INFO - file_process_new.py:551 - Inserting 11 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-02 Order acceptance and Closing R0.pdf
+2025-06-09 16:50:17,631 - document_processor - INFO - file_process_new.py:458 - Created 93 chunks
+2025-06-09 16:50:17,631 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,632 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,632 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 11 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,632 - document_processor - INFO - file_process_new.py:535 - Created 93 chunks from /home/qa-prod/Documents/QA_docs/NCR SOP.pdf
+2025-06-09 16:50:17,633 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 13 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,633 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,634 - document_processor - INFO - file_process_new.py:551 - Inserting 93 documents into Milvus for /home/qa-prod/Documents/QA_docs/NCR SOP.pdf
+2025-06-09 16:50:17,635 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,635 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 93 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,635 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 11 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,635 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,637 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 13 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,637 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,638 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 93 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,638 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,641 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/Root Cause Analysis (RCA) (_ (Z-Library).pdf
+2025-06-09 16:50:17,641 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,641 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 11 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,642 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,649 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,691 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 93 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,719 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-87-01 Control of Nonconforming Outputs R0.pdf
+2025-06-09 16:50:17,724 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,767 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,800 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-87-01 Control of Nonconforming Outputs R0.pdf processing result: Text extraction done
+2025-06-09 16:50:17,825 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,825 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 9
+2025-06-09 16:50:17,832 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,832 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 9 pages...
+2025-06-09 16:50:17,839 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-QMS-PRO-QOP-81-02 Configuration Management R0.pdf
+2025-06-09 16:50:17,850 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/Root Cause Analysis (RCA) (_ (Z-Library).pdf processing result: Text extraction done
+2025-06-09 16:50:17,852 - document_processor - INFO - file_process_new.py:458 - Created 29 chunks
+2025-06-09 16:50:17,868 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODSTR-PRO-QOP-85-03 Handling R0.pdf
+2025-06-09 16:50:17,869 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-QMS-PRO-QOP-81-02 Configuration Management R0.pdf processing result: Text extraction done
+2025-06-09 16:50:17,869 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 72
+2025-06-09 16:50:17,869 - document_processor - INFO - file_process_new.py:535 - Created 29 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-87-01 Control of Nonconforming Outputs R0.pdf
+2025-06-09 16:50:17,883 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 3
+2025-06-09 16:50:17,886 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODSTR-PRO-QOP-85-03 Handling R0.pdf processing result: Text extraction done
+2025-06-09 16:50:17,886 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 72 pages...
+2025-06-09 16:50:17,886 - document_processor - INFO - file_process_new.py:551 - Inserting 29 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-87-01 Control of Nonconforming Outputs R0.pdf
+2025-06-09 16:50:17,886 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-09 16:50:17,886 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 3
+2025-06-09 16:50:17,902 - document_processor - INFO - file_process_new.py:458 - Created 285 chunks
+2025-06-09 16:50:17,902 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 29 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,903 - document_processor - INFO - file_process_new.py:458 - Created 10 chunks
+2025-06-09 16:50:17,904 - document_processor - INFO - file_process_new.py:535 - Created 10 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-QMS-PRO-QOP-81-02 Configuration Management R0.pdf
+2025-06-09 16:50:17,903 - document_processor - INFO - file_process_new.py:535 - Created 285 chunks from /home/qa-prod/Documents/QA_docs/Root Cause Analysis (RCA) (_ (Z-Library).pdf
+2025-06-09 16:50:17,903 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-09 16:50:17,904 - document_processor - INFO - file_process_new.py:551 - Inserting 10 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-QMS-PRO-QOP-81-02 Configuration Management R0.pdf
+2025-06-09 16:50:17,905 - document_processor - INFO - file_process_new.py:551 - Inserting 285 documents into Milvus for /home/qa-prod/Documents/QA_docs/Root Cause Analysis (RCA) (_ (Z-Library).pdf
+2025-06-09 16:50:17,906 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,906 - document_processor - INFO - file_process_new.py:458 - Created 8 chunks
+2025-06-09 16:50:17,906 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,907 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 285 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,907 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 29 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,907 - document_processor - INFO - file_process_new.py:535 - Created 8 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODSTR-PRO-QOP-85-03 Handling R0.pdf
+2025-06-09 16:50:17,908 - document_processor - INFO - file_process_new.py:551 - Inserting 8 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODSTR-PRO-QOP-85-03 Handling R0.pdf
+2025-06-09 16:50:17,908 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 8 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:17,909 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,909 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,910 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,910 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 285 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,911 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,911 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 29 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,911 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,912 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,912 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 8 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:17,912 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 10 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,912 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,912 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,913 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 285 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,914 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,914 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,914 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,915 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 8 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:17,915 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,916 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,916 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,917 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,917 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:17,921 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-92-01 QMS Audit & Corrective Action R0.pdf
+2025-06-09 16:50:17,922 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-09 Inprocess Inspection R0.pdf
+2025-06-09 16:50:17,968 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-08 Execution & Monitoring on Shop Floor Rev0.pdf
+2025-06-09 16:50:17,969 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-93-01 Management Review R0.pdf
+2025-06-09 16:50:17,994 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-09 Inprocess Inspection R0.pdf processing result: Text extraction done
+2025-06-09 16:50:18,010 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-92-01 QMS Audit & Corrective Action R0.pdf processing result: Text extraction done
+2025-06-09 16:50:18,028 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-08 Execution & Monitoring on Shop Floor Rev0.pdf processing result: Text extraction done
+2025-06-09 16:50:18,052 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 4
+2025-06-09 16:50:18,060 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 10
+2025-06-09 16:50:18,064 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-93-01 Management Review R0.pdf processing result: Text extraction done
+2025-06-09 16:50:18,064 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 3
+2025-06-09 16:50:18,064 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-09 16:50:18,066 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 10 pages...
+2025-06-09 16:50:18,066 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 6
+2025-06-09 16:50:18,067 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-09 16:50:18,068 - document_processor - INFO - file_process_new.py:458 - Created 15 chunks
+2025-06-09 16:50:18,070 - document_processor - INFO - file_process_new.py:458 - Created 32 chunks
+2025-06-09 16:50:18,070 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 6 pages...
+2025-06-09 16:50:18,071 - document_processor - INFO - file_process_new.py:458 - Created 11 chunks
+2025-06-09 16:50:18,071 - document_processor - INFO - file_process_new.py:535 - Created 15 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-09 Inprocess Inspection R0.pdf
+2025-06-09 16:50:18,072 - document_processor - INFO - file_process_new.py:535 - Created 32 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-92-01 QMS Audit & Corrective Action R0.pdf
+2025-06-09 16:50:18,073 - document_processor - INFO - file_process_new.py:458 - Created 16 chunks
+2025-06-09 16:50:18,074 - document_processor - INFO - file_process_new.py:535 - Created 11 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-08 Execution & Monitoring on Shop Floor Rev0.pdf
+2025-06-09 16:50:18,075 - document_processor - INFO - file_process_new.py:551 - Inserting 11 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-08 Execution & Monitoring on Shop Floor Rev0.pdf
+2025-06-09 16:50:18,075 - document_processor - INFO - file_process_new.py:551 - Inserting 32 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-92-01 QMS Audit & Corrective Action R0.pdf
+2025-06-09 16:50:18,075 - document_processor - INFO - file_process_new.py:535 - Created 16 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-93-01 Management Review R0.pdf
+2025-06-09 16:50:18,074 - document_processor - INFO - file_process_new.py:551 - Inserting 15 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-09 Inprocess Inspection R0.pdf
+2025-06-09 16:50:18,075 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 11 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:18,075 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 32 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:18,076 - document_processor - INFO - file_process_new.py:551 - Inserting 16 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-93-01 Management Review R0.pdf
+2025-06-09 16:50:18,077 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 15 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:18,079 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 16 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:18,080 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,082 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,083 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 11 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:18,083 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 32 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:18,083 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,084 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,086 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,086 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 15 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:18,088 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 16 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:18,089 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 11 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:18,089 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,091 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 32 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:18,092 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,093 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 15 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:18,094 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,094 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,095 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,095 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,097 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,098 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 16 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:18,098 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,099 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,105 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,106 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,109 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-01 Equipment Maintenance R0.pdf
+2025-06-09 16:50:18,111 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-85-13 Customer Complaint Handling R0.pdf
+2025-06-09 16:50:18,130 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODPAINTSHOP-PRO-QOP-85-07 Surface Treatment and Coating R0.pdf
+2025-06-09 16:50:18,132 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-84-02 Verification of Externally Provided Products R0.pdf
+2025-06-09 16:50:18,145 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-01 Equipment Maintenance R0.pdf processing result: Text extraction done
+2025-06-09 16:50:18,186 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-84-02 Verification of Externally Provided Products R0.pdf processing result: OCR required - ERROR
+2025-06-09 16:50:18,216 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODPAINTSHOP-PRO-QOP-85-07 Surface Treatment and Coating R0.pdf processing result: Text extraction done
+2025-06-09 16:50:18,217 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-85-13 Customer Complaint Handling R0.pdf processing result: Text extraction done
+2025-06-09 16:50:18,217 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 4
+2025-06-09 16:50:18,218 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 0
+2025-06-09 16:50:18,218 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 7
+2025-06-09 16:50:18,219 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 7
+2025-06-09 16:50:18,219 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-09 16:50:18,219 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-01 Request for Quotation Processing R0.pdf
+2025-06-09 16:50:18,222 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 7 pages...
+2025-06-09 16:50:18,223 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 7 pages...
+2025-06-09 16:50:18,224 - document_processor - INFO - file_process_new.py:458 - Created 12 chunks
+2025-06-09 16:50:18,226 - document_processor - INFO - file_process_new.py:458 - Created 23 chunks
+2025-06-09 16:50:18,248 - document_processor - INFO - file_process_new.py:458 - Created 20 chunks
+2025-06-09 16:50:18,262 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-01 Request for Quotation Processing R0.pdf processing result: Text extraction done
+2025-06-09 16:50:18,262 - document_processor - INFO - file_process_new.py:535 - Created 12 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-01 Equipment Maintenance R0.pdf
+2025-06-09 16:50:18,262 - document_processor - INFO - file_process_new.py:535 - Created 23 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODPAINTSHOP-PRO-QOP-85-07 Surface Treatment and Coating R0.pdf
+2025-06-09 16:50:18,263 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 3
+2025-06-09 16:50:18,263 - document_processor - INFO - file_process_new.py:535 - Created 20 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-85-13 Customer Complaint Handling R0.pdf
+2025-06-09 16:50:18,263 - document_processor - INFO - file_process_new.py:551 - Inserting 12 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-01 Equipment Maintenance R0.pdf
+2025-06-09 16:50:18,263 - document_processor - INFO - file_process_new.py:551 - Inserting 23 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODPAINTSHOP-PRO-QOP-85-07 Surface Treatment and Coating R0.pdf
+2025-06-09 16:50:18,264 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-09 16:50:18,264 - document_processor - INFO - file_process_new.py:551 - Inserting 20 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-85-13 Customer Complaint Handling R0.pdf
+2025-06-09 16:50:18,278 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 12 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:18,279 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 23 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:18,281 - document_processor - INFO - file_process_new.py:458 - Created 9 chunks
+2025-06-09 16:50:18,281 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 20 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:18,282 - document_processor - INFO - file_process_new.py:535 - Created 9 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-01 Request for Quotation Processing R0.pdf
+2025-06-09 16:50:18,283 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,284 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,284 - document_processor - INFO - file_process_new.py:551 - Inserting 9 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-01 Request for Quotation Processing R0.pdf
+2025-06-09 16:50:18,285 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 12 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:18,285 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,285 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 23 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:18,285 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 9 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:18,286 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 20 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:18,287 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,289 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 12 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:18,289 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,290 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 23 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:18,290 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,291 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 9 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:18,293 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,293 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 20 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:18,294 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,294 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,294 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,295 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,295 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,295 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,295 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 9 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:18,296 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,297 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,298 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,302 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-91-01 Planning for Quality Assurance of Products.pdf
+2025-06-09 16:50:18,303 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/file_process
+2025-06-09 16:50:18,311 - document_processor - INFO - file_process_new.py:516 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-TLS-PRO-QOP-85-12 Through Life Support and Services R0.pdf
+2025-06-09 16:50:18,333 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-91-01 Planning for Quality Assurance of Products.pdf processing result: Text extraction done
+2025-06-09 16:50:18,334 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/file_process processing result: Unsupported file format: 
+2025-06-09 16:50:18,340 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 8
+2025-06-09 16:50:18,357 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 0
+2025-06-09 16:50:18,358 - document_processor - DEBUG - file_process_new.py:519 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-TLS-PRO-QOP-85-12 Through Life Support and Services R0.pdf processing result: Text extraction done
+2025-06-09 16:50:18,358 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-09 16:50:18,358 - document_processor - WARNING - file_process_new.py:582 - Error processing /home/qa-prod/Documents/file_process: Unsupported file format: 
+2025-06-09 16:50:18,358 - document_processor - DEBUG - file_process_new.py:520 - Pages extracted: 8
+2025-06-09 16:50:18,360 - document_processor - INFO - file_process_new.py:458 - Created 19 chunks
+2025-06-09 16:50:18,360 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-09 16:50:18,361 - document_processor - INFO - file_process_new.py:535 - Created 19 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-91-01 Planning for Quality Assurance of Products.pdf
+2025-06-09 16:50:18,362 - document_processor - INFO - file_process_new.py:458 - Created 25 chunks
+2025-06-09 16:50:18,362 - document_processor - INFO - file_process_new.py:551 - Inserting 19 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-91-01 Planning for Quality Assurance of Products.pdf
+2025-06-09 16:50:18,362 - document_processor - INFO - file_process_new.py:535 - Created 25 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-TLS-PRO-QOP-85-12 Through Life Support and Services R0.pdf
+2025-06-09 16:50:18,363 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 19 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:18,363 - document_processor - INFO - file_process_new.py:551 - Inserting 25 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-TLS-PRO-QOP-85-12 Through Life Support and Services R0.pdf
+2025-06-09 16:50:18,363 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 25 documents into Milvus collection 'QL' (attempt 1/3)
+2025-06-09 16:50:18,365 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,366 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 19 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:18,367 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 1: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,367 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 25 documents into Milvus collection 'QL' (attempt 2/3)
+2025-06-09 16:50:18,368 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,368 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 19 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:18,368 - document_processor - WARNING - file_process_new.py:507 - Milvus insertion retry 2: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,368 - document_processor - INFO - file_process_new.py:496 - Attempting to insert 25 documents into Milvus collection 'QL' (attempt 3/3)
+2025-06-09 16:50:18,369 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,369 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,369 - document_processor - ERROR - file_process_new.py:510 - Failed to insert into Milvus after 3 attempts: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,369 - document_processor - ERROR - file_process_new.py:563 - Error inserting into Milvus: 'SentenceTransformer' object has no attribute 'embed_documents'
+2025-06-09 16:50:18,375 - document_processor - INFO - file_process_new.py:688 - Processing 1 OCR files

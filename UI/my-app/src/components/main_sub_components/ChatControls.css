@@ -1,0 +1,75 @@
+.chat-controls {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-evenly;
+    padding: 0px 80px;
+    position: fixed;
+    bottom: 30px;
+
+}
+
+.new-chat-button {
+    background: linear-gradient(40.46deg,#4A25E1 26.3%, #7B5AFF 86.4%);
+    border: none;
+    padding: 10px 40px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 25px;
+    color: #fff;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    
+  }
+
+.new-chat-button:hover{
+    box-shadow: 0px 10px 20px rgb(165, 159, 233);
+}
+
+.message-input-container {
+    display: flex;
+    width: 100%;
+
+}
+
+.message-input:focus {
+    border-color: blue; 
+    outline: none;
+  }
+
+.message-input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #b1b0b4;
+    border-radius: 25px 0px 0px 25px;
+    font-size: 16px;
+    background-color: #f8f9fb;
+}
+
+.send-button {
+    background: linear-gradient(40.46deg,#4A25E1 26.3%, #7B5AFF 86.4%);
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px 25px 25px 0px;
+    font-size: 22px;
+}
+
+.send-button:hover {
+    box-shadow: 0px 10px 20px rgb(165, 159, 233); 
+  }
+
+
+  /* dark mode */
+
+  .dark-mode .message-input{
+    background-color: rgba(209, 207, 228, 0.103); 
+    border: none;
+    color: #fff;
+  }
+
+  .dark-mode .message-input:focus{
+    border: 1px solid gray;
+  }

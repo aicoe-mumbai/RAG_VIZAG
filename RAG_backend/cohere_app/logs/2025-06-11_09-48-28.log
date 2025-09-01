@@ -1,0 +1,459 @@
+2025-06-11 09:48:28,368 - document_processor - INFO - file_process_new.py:60 - Document processor module initialized
+2025-06-11 09:50:51,224 - document_processor - INFO - file_process_new.py:611 - -------- SYSTEM INFORMATION --------
+2025-06-11 09:50:51,224 - document_processor - INFO - file_process_new.py:612 - Python version: 3.10.17
+2025-06-11 09:50:51,224 - document_processor - INFO - file_process_new.py:613 - OS: Linux-5.15.0-139-generic-x86_64-with-glibc2.31
+2025-06-11 09:50:51,225 - document_processor - INFO - file_process_new.py:614 - ------------------------------------
+2025-06-11 09:50:51,225 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 09:50:51,242 - document_processor - INFO - file_process_new.py:642 - Starting processing 44 files with 4 workers
+2025-06-11 09:50:51,242 - document_processor - INFO - file_process_new.py:644 - Processing collection: QABackup
+2025-06-11 09:50:51,242 - document_processor - INFO - file_process_new.py:645 - Total files to process: 44
+2025-06-11 09:50:51,243 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-01 Request for Quotation Processing R0.pdf
+2025-06-11 09:50:51,243 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PTDC & DEC-PRO-QOP-83-01 Design & Development R0.pdf
+2025-06-11 09:50:51,260 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-86-01 Final Verification and Release of Product R0.pdf
+2025-06-11 09:50:51,271 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-03 Purchasing R0.pdf
+2025-06-11 09:50:51,334 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-01 Request for Quotation Processing R0.pdf processing result: Text extraction done
+2025-06-11 09:50:51,338 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-86-01 Final Verification and Release of Product R0.pdf processing result: Text extraction done
+2025-06-11 09:50:51,353 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 3
+2025-06-11 09:50:51,375 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PTDC & DEC-PRO-QOP-83-01 Design & Development R0.pdf processing result: Text extraction done
+2025-06-11 09:50:51,384 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 8
+2025-06-11 09:50:51,383 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 3
+2025-06-11 09:50:51,383 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-11 09:50:51,383 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-03 Purchasing R0.pdf processing result: Text extraction done
+2025-06-11 09:50:51,384 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-11 09:50:51,384 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-11 09:50:51,385 - document_processor - INFO - file_process_new.py:455 - Created 9 chunks
+2025-06-11 09:50:51,385 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 6
+2025-06-11 09:50:51,387 - document_processor - INFO - file_process_new.py:455 - Created 25 chunks
+2025-06-11 09:50:51,387 - document_processor - INFO - file_process_new.py:455 - Created 10 chunks
+2025-06-11 09:50:51,387 - document_processor - INFO - file_process_new.py:532 - Created 9 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-01 Request for Quotation Processing R0.pdf
+2025-06-11 09:50:51,388 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 6 pages...
+2025-06-11 09:50:51,388 - document_processor - INFO - file_process_new.py:532 - Created 25 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PTDC & DEC-PRO-QOP-83-01 Design & Development R0.pdf
+2025-06-11 09:50:51,388 - document_processor - INFO - file_process_new.py:532 - Created 10 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-86-01 Final Verification and Release of Product R0.pdf
+2025-06-11 09:50:51,388 - document_processor - INFO - file_process_new.py:548 - Inserting 9 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-01 Request for Quotation Processing R0.pdf
+2025-06-11 09:50:51,389 - document_processor - INFO - file_process_new.py:455 - Created 15 chunks
+2025-06-11 09:50:51,389 - document_processor - INFO - file_process_new.py:548 - Inserting 25 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PTDC & DEC-PRO-QOP-83-01 Design & Development R0.pdf
+2025-06-11 09:50:51,390 - document_processor - INFO - file_process_new.py:548 - Inserting 10 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-86-01 Final Verification and Release of Product R0.pdf
+2025-06-11 09:50:51,390 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 9 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:51,390 - document_processor - INFO - file_process_new.py:532 - Created 15 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-03 Purchasing R0.pdf
+2025-06-11 09:50:51,390 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 25 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:51,390 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 10 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:51,391 - document_processor - INFO - file_process_new.py:548 - Inserting 15 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-03 Purchasing R0.pdf
+2025-06-11 09:50:51,392 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 15 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:52,272 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 15 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:52,280 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-03 Purchasing R0.pdf into Milvus
+2025-06-11 09:50:52,280 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-92-01 QMS Audit & Corrective Action R0.pdf
+2025-06-11 09:50:52,342 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-92-01 QMS Audit & Corrective Action R0.pdf processing result: Text extraction done
+2025-06-11 09:50:52,342 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 10
+2025-06-11 09:50:52,342 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 10 pages...
+2025-06-11 09:50:52,344 - document_processor - INFO - file_process_new.py:455 - Created 32 chunks
+2025-06-11 09:50:52,344 - document_processor - INFO - file_process_new.py:532 - Created 32 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-92-01 QMS Audit & Corrective Action R0.pdf
+2025-06-11 09:50:52,345 - document_processor - INFO - file_process_new.py:548 - Inserting 32 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-92-01 QMS Audit & Corrective Action R0.pdf
+2025-06-11 09:50:52,345 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 32 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:52,378 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 9 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:52,383 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-01 Request for Quotation Processing R0.pdf into Milvus
+2025-06-11 09:50:52,384 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-WE&M-PRO-QOP-85-06 Welding Engineering and Metallurgy- Planning and Execution R0 Dt. 01.04.2024.pdf
+2025-06-11 09:50:52,441 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-WE&M-PRO-QOP-85-06 Welding Engineering and Metallurgy- Planning and Execution R0 Dt. 01.04.2024.pdf processing result: Text extraction done
+2025-06-11 09:50:52,442 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 5
+2025-06-11 09:50:52,442 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 5 pages...
+2025-06-11 09:50:52,443 - document_processor - INFO - file_process_new.py:455 - Created 18 chunks
+2025-06-11 09:50:52,443 - document_processor - INFO - file_process_new.py:532 - Created 18 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-WE&M-PRO-QOP-85-06 Welding Engineering and Metallurgy- Planning and Execution R0 Dt. 01.04.2024.pdf
+2025-06-11 09:50:52,443 - document_processor - INFO - file_process_new.py:548 - Inserting 18 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-WE&M-PRO-QOP-85-06 Welding Engineering and Metallurgy- Planning and Execution R0 Dt. 01.04.2024.pdf
+2025-06-11 09:50:52,443 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 18 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:52,823 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 25 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:52,829 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PTDC & DEC-PRO-QOP-83-01 Design & Development R0.pdf into Milvus
+2025-06-11 09:50:52,829 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-05 Planning for Execution on Shop Floor Rev0.pdf
+2025-06-11 09:50:52,839 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-05 Planning for Execution on Shop Floor Rev0.pdf processing result: Text extraction done
+2025-06-11 09:50:52,839 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 2
+2025-06-11 09:50:52,839 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 2 pages...
+2025-06-11 09:50:52,839 - document_processor - INFO - file_process_new.py:455 - Created 7 chunks
+2025-06-11 09:50:52,839 - document_processor - INFO - file_process_new.py:532 - Created 7 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-05 Planning for Execution on Shop Floor Rev0.pdf
+2025-06-11 09:50:52,839 - document_processor - INFO - file_process_new.py:548 - Inserting 7 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-05 Planning for Execution on Shop Floor Rev0.pdf
+2025-06-11 09:50:52,840 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 7 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:53,123 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 7 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:53,129 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-05 Planning for Execution on Shop Floor Rev0.pdf into Milvus
+2025-06-11 09:50:53,129 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-03 Control of MMR R0.pdf
+2025-06-11 09:50:53,151 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-03 Control of MMR R0.pdf processing result: Text extraction done
+2025-06-11 09:50:53,151 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 5
+2025-06-11 09:50:53,151 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 5 pages...
+2025-06-11 09:50:53,152 - document_processor - INFO - file_process_new.py:455 - Created 17 chunks
+2025-06-11 09:50:53,153 - document_processor - INFO - file_process_new.py:532 - Created 17 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-03 Control of MMR R0.pdf
+2025-06-11 09:50:53,153 - document_processor - INFO - file_process_new.py:548 - Inserting 17 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-03 Control of MMR R0.pdf
+2025-06-11 09:50:53,153 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 17 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:53,408 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 18 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:53,413 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-WE&M-PRO-QOP-85-06 Welding Engineering and Metallurgy- Planning and Execution R0 Dt. 01.04.2024.pdf into Milvus
+2025-06-11 09:50:53,413 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PRODSTR-PRO-QOP-85-02 Property Belonging to customers R0.pdf
+2025-06-11 09:50:53,435 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PRODSTR-PRO-QOP-85-02 Property Belonging to customers R0.pdf processing result: Text extraction done
+2025-06-11 09:50:53,435 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 5
+2025-06-11 09:50:53,435 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 5 pages...
+2025-06-11 09:50:53,436 - document_processor - INFO - file_process_new.py:455 - Created 15 chunks
+2025-06-11 09:50:53,436 - document_processor - INFO - file_process_new.py:532 - Created 15 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PRODSTR-PRO-QOP-85-02 Property Belonging to customers R0.pdf
+2025-06-11 09:50:53,436 - document_processor - INFO - file_process_new.py:548 - Inserting 15 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PRODSTR-PRO-QOP-85-02 Property Belonging to customers R0.pdf
+2025-06-11 09:50:53,436 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 15 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:53,957 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 17 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:53,963 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-03 Control of MMR R0.pdf into Milvus
+2025-06-11 09:50:53,963 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-01 Evaluation and approval of external providers R0.pdf
+2025-06-11 09:50:54,004 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-01 Evaluation and approval of external providers R0.pdf processing result: Text extraction done
+2025-06-11 09:50:54,004 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 8
+2025-06-11 09:50:54,005 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-11 09:50:54,006 - document_processor - INFO - file_process_new.py:455 - Created 23 chunks
+2025-06-11 09:50:54,006 - document_processor - INFO - file_process_new.py:532 - Created 23 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-01 Evaluation and approval of external providers R0.pdf
+2025-06-11 09:50:54,006 - document_processor - INFO - file_process_new.py:548 - Inserting 23 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-01 Evaluation and approval of external providers R0.pdf
+2025-06-11 09:50:54,006 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 23 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:54,092 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 32 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:54,098 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-92-01 QMS Audit & Corrective Action R0.pdf into Milvus
+2025-06-11 09:50:54,098 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/Heat Treatment Principles.pdf
+2025-06-11 09:50:54,767 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 15 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:54,784 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 10 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:54,812 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PRODSTR-PRO-QOP-85-02 Property Belonging to customers R0.pdf into Milvus
+2025-06-11 09:50:54,818 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-02 Control of Records R0.pdf
+2025-06-11 09:50:54,830 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-86-01 Final Verification and Release of Product R0.pdf into Milvus
+2025-06-11 09:50:54,851 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-02 Control of Records R0.pdf processing result: Text extraction done
+2025-06-11 09:50:54,861 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTHB-A-DT-PRO-QOP-85-15 Documentation and Training R0.pdf
+2025-06-11 09:50:54,892 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 3
+2025-06-11 09:50:54,928 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-11 09:50:54,939 - document_processor - INFO - file_process_new.py:455 - Created 10 chunks
+2025-06-11 09:50:54,969 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTHB-A-DT-PRO-QOP-85-15 Documentation and Training R0.pdf processing result: Text extraction done
+2025-06-11 09:50:54,969 - document_processor - INFO - file_process_new.py:532 - Created 10 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-02 Control of Records R0.pdf
+2025-06-11 09:50:54,976 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 4
+2025-06-11 09:50:54,987 - document_processor - INFO - file_process_new.py:548 - Inserting 10 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-02 Control of Records R0.pdf
+2025-06-11 09:50:55,017 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-11 09:50:55,045 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 10 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:55,052 - document_processor - INFO - file_process_new.py:455 - Created 9 chunks
+2025-06-11 09:50:55,089 - document_processor - INFO - file_process_new.py:532 - Created 9 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTHB-A-DT-PRO-QOP-85-15 Documentation and Training R0.pdf
+2025-06-11 09:50:55,096 - document_processor - INFO - file_process_new.py:548 - Inserting 9 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTHB-A-DT-PRO-QOP-85-15 Documentation and Training R0.pdf
+2025-06-11 09:50:55,108 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 9 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:55,200 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/Heat Treatment Principles.pdf processing result: Text extraction done
+2025-06-11 09:50:55,201 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 398
+2025-06-11 09:50:55,202 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 398 pages...
+2025-06-11 09:50:55,300 - document_processor - INFO - file_process_new.py:455 - Created 1998 chunks
+2025-06-11 09:50:55,301 - document_processor - INFO - file_process_new.py:532 - Created 1998 chunks from /home/qa-prod/Documents/QA_docs/Heat Treatment Principles.pdf
+2025-06-11 09:50:55,306 - document_processor - INFO - file_process_new.py:548 - Inserting 1998 documents into Milvus for /home/qa-prod/Documents/QA_docs/Heat Treatment Principles.pdf
+2025-06-11 09:50:55,307 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 1998 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:55,787 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 23 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:55,793 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-A-A-SCG-PRO-QOP-84-01 Evaluation and approval of external providers R0.pdf into Milvus
+2025-06-11 09:50:55,794 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-91-01 Planning for Quality Assurance of Products.pdf
+2025-06-11 09:50:55,824 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-91-01 Planning for Quality Assurance of Products.pdf processing result: Text extraction done
+2025-06-11 09:50:55,825 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 8
+2025-06-11 09:50:55,825 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-11 09:50:55,826 - document_processor - INFO - file_process_new.py:455 - Created 19 chunks
+2025-06-11 09:50:55,826 - document_processor - INFO - file_process_new.py:532 - Created 19 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-91-01 Planning for Quality Assurance of Products.pdf
+2025-06-11 09:50:55,826 - document_processor - INFO - file_process_new.py:548 - Inserting 19 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-91-01 Planning for Quality Assurance of Products.pdf
+2025-06-11 09:50:55,827 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 19 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:55,831 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 10 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:55,838 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-02 Control of Records R0.pdf into Milvus
+2025-06-11 09:50:55,839 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-01 Equipment Maintenance R0.pdf
+2025-06-11 09:50:55,860 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-01 Equipment Maintenance R0.pdf processing result: Text extraction done
+2025-06-11 09:50:55,860 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 4
+2025-06-11 09:50:55,860 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-11 09:50:55,861 - document_processor - INFO - file_process_new.py:455 - Created 12 chunks
+2025-06-11 09:50:55,862 - document_processor - INFO - file_process_new.py:532 - Created 12 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-01 Equipment Maintenance R0.pdf
+2025-06-11 09:50:55,863 - document_processor - INFO - file_process_new.py:548 - Inserting 12 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-01 Equipment Maintenance R0.pdf
+2025-06-11 09:50:55,863 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 12 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:55,869 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 9 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:55,875 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTHB-A-DT-PRO-QOP-85-15 Documentation and Training R0.pdf into Milvus
+2025-06-11 09:50:55,875 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-01 Control of Documents R0.pdf
+2025-06-11 09:50:55,916 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-01 Control of Documents R0.pdf processing result: Text extraction done
+2025-06-11 09:50:55,917 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 10
+2025-06-11 09:50:55,918 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 10 pages...
+2025-06-11 09:50:55,920 - document_processor - INFO - file_process_new.py:455 - Created 29 chunks
+2025-06-11 09:50:55,920 - document_processor - INFO - file_process_new.py:532 - Created 29 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-01 Control of Documents R0.pdf
+2025-06-11 09:50:55,920 - document_processor - INFO - file_process_new.py:548 - Inserting 29 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-01 Control of Documents R0.pdf
+2025-06-11 09:50:55,920 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 29 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:56,512 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 12 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:56,517 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-71-01 Equipment Maintenance R0.pdf into Milvus
+2025-06-11 09:50:56,517 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/Root Cause Analysis (RCA) (_ (Z-Library).pdf
+2025-06-11 09:50:56,685 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/Root Cause Analysis (RCA) (_ (Z-Library).pdf processing result: Text extraction done
+2025-06-11 09:50:56,686 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 72
+2025-06-11 09:50:56,686 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 72 pages...
+2025-06-11 09:50:56,701 - document_processor - INFO - file_process_new.py:455 - Created 285 chunks
+2025-06-11 09:50:56,701 - document_processor - INFO - file_process_new.py:532 - Created 285 chunks from /home/qa-prod/Documents/QA_docs/Root Cause Analysis (RCA) (_ (Z-Library).pdf
+2025-06-11 09:50:56,702 - document_processor - INFO - file_process_new.py:548 - Inserting 285 documents into Milvus for /home/qa-prod/Documents/QA_docs/Root Cause Analysis (RCA) (_ (Z-Library).pdf
+2025-06-11 09:50:56,702 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 285 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:57,001 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 19 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:57,008 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-91-01 Planning for Quality Assurance of Products.pdf into Milvus
+2025-06-11 09:50:57,008 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/Root_Cause_Analysis_Improving_Performance_for_Bottom_Line_Robert.pdf
+2025-06-11 09:50:57,894 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/Root_Cause_Analysis_Improving_Performance_for_Bottom_Line_Robert.pdf processing result: Text extraction done
+2025-06-11 09:50:57,896 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 260
+2025-06-11 09:50:57,897 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 260 pages...
+2025-06-11 09:50:57,954 - document_processor - INFO - file_process_new.py:455 - Created 1168 chunks
+2025-06-11 09:50:57,955 - document_processor - INFO - file_process_new.py:532 - Created 1168 chunks from /home/qa-prod/Documents/QA_docs/Root_Cause_Analysis_Improving_Performance_for_Bottom_Line_Robert.pdf
+2025-06-11 09:50:57,958 - document_processor - INFO - file_process_new.py:548 - Inserting 1168 documents into Milvus for /home/qa-prod/Documents/QA_docs/Root_Cause_Analysis_Improving_Performance_for_Bottom_Line_Robert.pdf
+2025-06-11 09:50:57,959 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 1168 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:58,015 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 29 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:58,022 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-75-01 Control of Documents R0.pdf into Milvus
+2025-06-11 09:50:58,024 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PMG-PRO-QOP-81-01 Planning and Monitoring Of Project Execution R0.pdf
+2025-06-11 09:50:58,044 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PMG-PRO-QOP-81-01 Planning and Monitoring Of Project Execution R0.pdf processing result: Text extraction done
+2025-06-11 09:50:58,045 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 4
+2025-06-11 09:50:58,045 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-11 09:50:58,046 - document_processor - INFO - file_process_new.py:455 - Created 13 chunks
+2025-06-11 09:50:58,046 - document_processor - INFO - file_process_new.py:532 - Created 13 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PMG-PRO-QOP-81-01 Planning and Monitoring Of Project Execution R0.pdf
+2025-06-11 09:50:58,046 - document_processor - INFO - file_process_new.py:548 - Inserting 13 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PMG-PRO-QOP-81-01 Planning and Monitoring Of Project Execution R0.pdf
+2025-06-11 09:50:58,047 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 13 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:58,710 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 13 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:58,716 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PMG-PRO-QOP-81-01 Planning and Monitoring Of Project Execution R0.pdf into Milvus
+2025-06-11 09:50:58,716 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-61-01 Risk Opportunity Analysis  planning R0.pdf
+2025-06-11 09:50:58,755 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-61-01 Risk Opportunity Analysis  planning R0.pdf processing result: Text extraction done
+2025-06-11 09:50:58,755 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 6
+2025-06-11 09:50:58,755 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 6 pages...
+2025-06-11 09:50:58,756 - document_processor - INFO - file_process_new.py:455 - Created 16 chunks
+2025-06-11 09:50:58,756 - document_processor - INFO - file_process_new.py:532 - Created 16 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-61-01 Risk Opportunity Analysis  planning R0.pdf
+2025-06-11 09:50:58,756 - document_processor - INFO - file_process_new.py:548 - Inserting 16 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-61-01 Risk Opportunity Analysis  planning R0.pdf
+2025-06-11 09:50:58,757 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 16 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:59,483 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 16 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:59,490 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-61-01 Risk Opportunity Analysis  planning R0.pdf into Milvus
+2025-06-11 09:50:59,490 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PMG-PRO-QOP-81-05 Operational Risk Management R0.pdf
+2025-06-11 09:50:59,501 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PMG-PRO-QOP-81-05 Operational Risk Management R0.pdf processing result: Text extraction done
+2025-06-11 09:50:59,502 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 2
+2025-06-11 09:50:59,502 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 2 pages...
+2025-06-11 09:50:59,505 - document_processor - INFO - file_process_new.py:455 - Created 5 chunks
+2025-06-11 09:50:59,505 - document_processor - INFO - file_process_new.py:532 - Created 5 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PMG-PRO-QOP-81-05 Operational Risk Management R0.pdf
+2025-06-11 09:50:59,506 - document_processor - INFO - file_process_new.py:548 - Inserting 5 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PMG-PRO-QOP-81-05 Operational Risk Management R0.pdf
+2025-06-11 09:50:59,506 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 5 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:50:59,765 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 5 documents into Milvus collection 'QABackup'
+2025-06-11 09:50:59,771 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-PMG-PRO-QOP-81-05 Operational Risk Management R0.pdf into Milvus
+2025-06-11 09:50:59,771 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-14 First Article Inspection R0.pdf
+2025-06-11 09:50:59,810 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-14 First Article Inspection R0.pdf processing result: Text extraction done
+2025-06-11 09:50:59,810 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 8
+2025-06-11 09:50:59,810 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-11 09:50:59,812 - document_processor - INFO - file_process_new.py:455 - Created 28 chunks
+2025-06-11 09:50:59,812 - document_processor - INFO - file_process_new.py:532 - Created 28 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-14 First Article Inspection R0.pdf
+2025-06-11 09:50:59,812 - document_processor - INFO - file_process_new.py:548 - Inserting 28 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-14 First Article Inspection R0.pdf
+2025-06-11 09:50:59,812 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 28 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:01,313 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 28 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:01,318 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-14 First Article Inspection R0.pdf into Milvus
+2025-06-11 09:51:01,318 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/NCR SOP.pdf
+2025-06-11 09:51:01,422 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/NCR SOP.pdf processing result: Text extraction done
+2025-06-11 09:51:01,423 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 27
+2025-06-11 09:51:01,423 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 27 pages...
+2025-06-11 09:51:01,427 - document_processor - INFO - file_process_new.py:455 - Created 93 chunks
+2025-06-11 09:51:01,428 - document_processor - INFO - file_process_new.py:532 - Created 93 chunks from /home/qa-prod/Documents/QA_docs/NCR SOP.pdf
+2025-06-11 09:51:01,428 - document_processor - INFO - file_process_new.py:548 - Inserting 93 documents into Milvus for /home/qa-prod/Documents/QA_docs/NCR SOP.pdf
+2025-06-11 09:51:01,428 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 93 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:06,016 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 93 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:06,022 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/NCR SOP.pdf into Milvus
+2025-06-11 09:51:06,023 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-93-01 Management Review R0.pdf
+2025-06-11 09:51:06,049 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-93-01 Management Review R0.pdf processing result: Text extraction done
+2025-06-11 09:51:06,050 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 6
+2025-06-11 09:51:06,050 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 6 pages...
+2025-06-11 09:51:06,051 - document_processor - INFO - file_process_new.py:455 - Created 16 chunks
+2025-06-11 09:51:06,051 - document_processor - INFO - file_process_new.py:532 - Created 16 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-93-01 Management Review R0.pdf
+2025-06-11 09:51:06,051 - document_processor - INFO - file_process_new.py:548 - Inserting 16 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-93-01 Management Review R0.pdf
+2025-06-11 09:51:06,051 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 16 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:06,840 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 16 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:06,846 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-93-01 Management Review R0.pdf into Milvus
+2025-06-11 09:51:06,846 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODSTR-PRO-QOP-85-03 Handling R0.pdf
+2025-06-11 09:51:06,863 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODSTR-PRO-QOP-85-03 Handling R0.pdf processing result: Text extraction done
+2025-06-11 09:51:06,863 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 3
+2025-06-11 09:51:06,863 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-11 09:51:06,864 - document_processor - INFO - file_process_new.py:455 - Created 8 chunks
+2025-06-11 09:51:06,864 - document_processor - INFO - file_process_new.py:532 - Created 8 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODSTR-PRO-QOP-85-03 Handling R0.pdf
+2025-06-11 09:51:06,864 - document_processor - INFO - file_process_new.py:548 - Inserting 8 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODSTR-PRO-QOP-85-03 Handling R0.pdf
+2025-06-11 09:51:06,864 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 8 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:07,206 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 8 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:07,212 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODSTR-PRO-QOP-85-03 Handling R0.pdf into Milvus
+2025-06-11 09:51:07,212 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-01 Identification and Traceability R0.pdf
+2025-06-11 09:51:07,231 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-01 Identification and Traceability R0.pdf processing result: Text extraction done
+2025-06-11 09:51:07,231 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 4
+2025-06-11 09:51:07,231 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-11 09:51:07,232 - document_processor - INFO - file_process_new.py:455 - Created 13 chunks
+2025-06-11 09:51:07,232 - document_processor - INFO - file_process_new.py:532 - Created 13 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-01 Identification and Traceability R0.pdf
+2025-06-11 09:51:07,233 - document_processor - INFO - file_process_new.py:548 - Inserting 13 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-01 Identification and Traceability R0.pdf
+2025-06-11 09:51:07,233 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 13 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:07,872 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 13 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:07,877 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-01 Identification and Traceability R0.pdf into Milvus
+2025-06-11 09:51:07,878 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-87-01 Control of Nonconforming Outputs R0.pdf
+2025-06-11 09:51:07,913 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-87-01 Control of Nonconforming Outputs R0.pdf processing result: Text extraction done
+2025-06-11 09:51:07,913 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 9
+2025-06-11 09:51:07,913 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 9 pages...
+2025-06-11 09:51:07,915 - document_processor - INFO - file_process_new.py:455 - Created 29 chunks
+2025-06-11 09:51:07,915 - document_processor - INFO - file_process_new.py:532 - Created 29 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-87-01 Control of Nonconforming Outputs R0.pdf
+2025-06-11 09:51:07,915 - document_processor - INFO - file_process_new.py:548 - Inserting 29 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-87-01 Control of Nonconforming Outputs R0.pdf
+2025-06-11 09:51:07,915 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 29 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:09,507 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 29 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:09,513 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-87-01 Control of Nonconforming Outputs R0.pdf into Milvus
+2025-06-11 09:51:09,513 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-85-13 Customer Complaint Handling R0.pdf
+2025-06-11 09:51:09,543 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-85-13 Customer Complaint Handling R0.pdf processing result: Text extraction done
+2025-06-11 09:51:09,544 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 7
+2025-06-11 09:51:09,544 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 7 pages...
+2025-06-11 09:51:09,545 - document_processor - INFO - file_process_new.py:455 - Created 20 chunks
+2025-06-11 09:51:09,545 - document_processor - INFO - file_process_new.py:532 - Created 20 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-85-13 Customer Complaint Handling R0.pdf
+2025-06-11 09:51:09,545 - document_processor - INFO - file_process_new.py:548 - Inserting 20 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-85-13 Customer Complaint Handling R0.pdf
+2025-06-11 09:51:09,545 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 20 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:10,592 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 20 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:10,599 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTHCB-A-QMS-PRO-QOP-85-13 Customer Complaint Handling R0.pdf into Milvus
+2025-06-11 09:51:10,601 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-09 Inprocess Inspection R0.pdf
+2025-06-11 09:51:10,621 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-09 Inprocess Inspection R0.pdf processing result: Text extraction done
+2025-06-11 09:51:10,622 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 4
+2025-06-11 09:51:10,622 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-11 09:51:10,623 - document_processor - INFO - file_process_new.py:455 - Created 15 chunks
+2025-06-11 09:51:10,623 - document_processor - INFO - file_process_new.py:532 - Created 15 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-09 Inprocess Inspection R0.pdf
+2025-06-11 09:51:10,623 - document_processor - INFO - file_process_new.py:548 - Inserting 15 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-09 Inprocess Inspection R0.pdf
+2025-06-11 09:51:10,623 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 15 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:10,762 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 285 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:10,767 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/Root Cause Analysis (RCA) (_ (Z-Library).pdf into Milvus
+2025-06-11 09:51:10,768 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-QMS-PRO-QOP-81-02 Configuration Management R0.pdf
+2025-06-11 09:51:10,782 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-QMS-PRO-QOP-81-02 Configuration Management R0.pdf processing result: Text extraction done
+2025-06-11 09:51:10,783 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 3
+2025-06-11 09:51:10,783 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-11 09:51:10,783 - document_processor - INFO - file_process_new.py:455 - Created 10 chunks
+2025-06-11 09:51:10,783 - document_processor - INFO - file_process_new.py:532 - Created 10 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-QMS-PRO-QOP-81-02 Configuration Management R0.pdf
+2025-06-11 09:51:10,783 - document_processor - INFO - file_process_new.py:548 - Inserting 10 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-QMS-PRO-QOP-81-02 Configuration Management R0.pdf
+2025-06-11 09:51:10,783 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 10 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:11,200 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 10 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:11,206 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-QMS-PRO-QOP-81-02 Configuration Management R0.pdf into Milvus
+2025-06-11 09:51:11,207 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-08 Execution & Monitoring on Shop Floor Rev0.pdf
+2025-06-11 09:51:11,222 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-08 Execution & Monitoring on Shop Floor Rev0.pdf processing result: Text extraction done
+2025-06-11 09:51:11,222 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 3
+2025-06-11 09:51:11,222 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-11 09:51:11,223 - document_processor - INFO - file_process_new.py:455 - Created 11 chunks
+2025-06-11 09:51:11,223 - document_processor - INFO - file_process_new.py:532 - Created 11 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-08 Execution & Monitoring on Shop Floor Rev0.pdf
+2025-06-11 09:51:11,223 - document_processor - INFO - file_process_new.py:548 - Inserting 11 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-08 Execution & Monitoring on Shop Floor Rev0.pdf
+2025-06-11 09:51:11,223 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 11 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:11,378 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 15 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:11,385 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-85-09 Inprocess Inspection R0.pdf into Milvus
+2025-06-11 09:51:11,385 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-84-02 Verification of Externally Provided Products R0.pdf
+2025-06-11 09:51:11,388 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-84-02 Verification of Externally Provided Products R0.pdf processing result: OCR required - ERROR
+2025-06-11 09:51:11,388 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 0
+2025-06-11 09:51:11,388 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/Root_Cause_Failure_Analysis_A_Guide_to_Improve_Plant_Trinath_Sahoo.pdf
+2025-06-11 09:51:12,017 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/Root_Cause_Failure_Analysis_A_Guide_to_Improve_Plant_Trinath_Sahoo.pdf processing result: Text extraction done
+2025-06-11 09:51:12,018 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 334
+2025-06-11 09:51:12,018 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 334 pages...
+2025-06-11 09:51:12,107 - document_processor - INFO - file_process_new.py:455 - Created 1759 chunks
+2025-06-11 09:51:12,107 - document_processor - INFO - file_process_new.py:532 - Created 1759 chunks from /home/qa-prod/Documents/QA_docs/Root_Cause_Failure_Analysis_A_Guide_to_Improve_Plant_Trinath_Sahoo.pdf
+2025-06-11 09:51:12,112 - document_processor - INFO - file_process_new.py:548 - Inserting 1759 documents into Milvus for /home/qa-prod/Documents/QA_docs/Root_Cause_Failure_Analysis_A_Guide_to_Improve_Plant_Trinath_Sahoo.pdf
+2025-06-11 09:51:12,113 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 1759 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:12,189 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 11 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:12,195 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-08 Execution & Monitoring on Shop Floor Rev0.pdf into Milvus
+2025-06-11 09:51:12,196 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-10 Foreign Object Debris (FOD) Prevention Rev0.pdf
+2025-06-11 09:51:12,206 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-10 Foreign Object Debris (FOD) Prevention Rev0.pdf processing result: Text extraction done
+2025-06-11 09:51:12,206 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 2
+2025-06-11 09:51:12,207 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 2 pages...
+2025-06-11 09:51:12,207 - document_processor - INFO - file_process_new.py:455 - Created 5 chunks
+2025-06-11 09:51:12,207 - document_processor - INFO - file_process_new.py:532 - Created 5 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-10 Foreign Object Debris (FOD) Prevention Rev0.pdf
+2025-06-11 09:51:12,207 - document_processor - INFO - file_process_new.py:548 - Inserting 5 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-10 Foreign Object Debris (FOD) Prevention Rev0.pdf
+2025-06-11 09:51:12,207 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 5 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:12,451 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 5 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:12,456 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PT-A-PRODAIT-PRO-QOP-85-10 Foreign Object Debris (FOD) Prevention Rev0.pdf into Milvus
+2025-06-11 09:51:12,457 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-02 Order acceptance and Closing R0.pdf
+2025-06-11 09:51:12,494 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-02 Order acceptance and Closing R0.pdf processing result: Text extraction done
+2025-06-11 09:51:12,495 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 4
+2025-06-11 09:51:12,495 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 4 pages...
+2025-06-11 09:51:12,495 - document_processor - INFO - file_process_new.py:455 - Created 11 chunks
+2025-06-11 09:51:12,496 - document_processor - INFO - file_process_new.py:532 - Created 11 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-02 Order acceptance and Closing R0.pdf
+2025-06-11 09:51:12,496 - document_processor - INFO - file_process_new.py:548 - Inserting 11 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-02 Order acceptance and Closing R0.pdf
+2025-06-11 09:51:12,496 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 11 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:13,062 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 11 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:13,068 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-82-02 Order acceptance and Closing R0.pdf into Milvus
+2025-06-11 09:51:13,068 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-P-A-HR-PRO-QOP-72-01P Competence Management R0.pdf
+2025-06-11 09:51:13,099 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-P-A-HR-PRO-QOP-72-01P Competence Management R0.pdf processing result: Text extraction done
+2025-06-11 09:51:13,100 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 6
+2025-06-11 09:51:13,100 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 6 pages...
+2025-06-11 09:51:13,101 - document_processor - INFO - file_process_new.py:455 - Created 22 chunks
+2025-06-11 09:51:13,101 - document_processor - INFO - file_process_new.py:532 - Created 22 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-P-A-HR-PRO-QOP-72-01P Competence Management R0.pdf
+2025-06-11 09:51:13,101 - document_processor - INFO - file_process_new.py:548 - Inserting 22 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-P-A-HR-PRO-QOP-72-01P Competence Management R0.pdf
+2025-06-11 09:51:13,101 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 22 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:14,328 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 22 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:14,336 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-P-A-HR-PRO-QOP-72-01P Competence Management R0.pdf into Milvus
+2025-06-11 09:51:14,336 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-103-01 Continual Improvement R0.pdf
+2025-06-11 09:51:14,351 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-103-01 Continual Improvement R0.pdf processing result: Text extraction done
+2025-06-11 09:51:14,351 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 3
+2025-06-11 09:51:14,351 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-11 09:51:14,352 - document_processor - INFO - file_process_new.py:455 - Created 8 chunks
+2025-06-11 09:51:14,352 - document_processor - INFO - file_process_new.py:532 - Created 8 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-103-01 Continual Improvement R0.pdf
+2025-06-11 09:51:14,352 - document_processor - INFO - file_process_new.py:548 - Inserting 8 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-103-01 Continual Improvement R0.pdf
+2025-06-11 09:51:14,352 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 8 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:14,740 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 8 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:14,746 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-103-01 Continual Improvement R0.pdf into Milvus
+2025-06-11 09:51:14,746 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-63-01 Management of Change R0.pdf
+2025-06-11 09:51:14,780 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-63-01 Management of Change R0.pdf processing result: Text extraction done
+2025-06-11 09:51:14,781 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 8
+2025-06-11 09:51:14,781 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-11 09:51:14,782 - document_processor - INFO - file_process_new.py:455 - Created 21 chunks
+2025-06-11 09:51:14,783 - document_processor - INFO - file_process_new.py:532 - Created 21 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-63-01 Management of Change R0.pdf
+2025-06-11 09:51:14,783 - document_processor - INFO - file_process_new.py:548 - Inserting 21 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-63-01 Management of Change R0.pdf
+2025-06-11 09:51:14,783 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 21 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:15,912 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 21 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:15,917 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-63-01 Management of Change R0.pdf into Milvus
+2025-06-11 09:51:15,918 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-TLS-PRO-QOP-85-12 Through Life Support and Services R0.pdf
+2025-06-11 09:51:15,941 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-TLS-PRO-QOP-85-12 Through Life Support and Services R0.pdf processing result: Text extraction done
+2025-06-11 09:51:15,942 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 8
+2025-06-11 09:51:15,942 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 8 pages...
+2025-06-11 09:51:15,944 - document_processor - INFO - file_process_new.py:455 - Created 25 chunks
+2025-06-11 09:51:15,944 - document_processor - INFO - file_process_new.py:532 - Created 25 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-TLS-PRO-QOP-85-12 Through Life Support and Services R0.pdf
+2025-06-11 09:51:15,944 - document_processor - INFO - file_process_new.py:548 - Inserting 25 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-TLS-PRO-QOP-85-12 Through Life Support and Services R0.pdf
+2025-06-11 09:51:15,944 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 25 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:17,329 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 25 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:17,334 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-TLS-PRO-QOP-85-12 Through Life Support and Services R0.pdf into Milvus
+2025-06-11 09:51:17,335 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-11 Packing , Loading & Transportation R0.pdf
+2025-06-11 09:51:17,359 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-11 Packing , Loading & Transportation R0.pdf processing result: Text extraction done
+2025-06-11 09:51:17,360 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 5
+2025-06-11 09:51:17,361 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 5 pages...
+2025-06-11 09:51:17,362 - document_processor - INFO - file_process_new.py:455 - Created 13 chunks
+2025-06-11 09:51:17,362 - document_processor - INFO - file_process_new.py:532 - Created 13 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-11 Packing , Loading & Transportation R0.pdf
+2025-06-11 09:51:17,362 - document_processor - INFO - file_process_new.py:548 - Inserting 13 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-11 Packing , Loading & Transportation R0.pdf
+2025-06-11 09:51:17,362 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 13 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:18,003 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 13 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:18,009 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QMS-PRO-QOP-85-11 Packing , Loading & Transportation R0.pdf into Milvus
+2025-06-11 09:51:18,009 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-HR-PRO-QOP-72-01 Competence Management R0.pdf
+2025-06-11 09:51:18,025 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-HR-PRO-QOP-72-01 Competence Management R0.pdf processing result: Text extraction done
+2025-06-11 09:51:18,025 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 3
+2025-06-11 09:51:18,025 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-11 09:51:18,026 - document_processor - INFO - file_process_new.py:455 - Created 10 chunks
+2025-06-11 09:51:18,026 - document_processor - INFO - file_process_new.py:532 - Created 10 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-HR-PRO-QOP-72-01 Competence Management R0.pdf
+2025-06-11 09:51:18,026 - document_processor - INFO - file_process_new.py:548 - Inserting 10 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-HR-PRO-QOP-72-01 Competence Management R0.pdf
+2025-06-11 09:51:18,026 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 10 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:18,506 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 10 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:18,512 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-HR-PRO-QOP-72-01 Competence Management R0.pdf into Milvus
+2025-06-11 09:51:18,512 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODPAINTSHOP-PRO-QOP-85-07 Surface Treatment and Coating R0.pdf
+2025-06-11 09:51:18,541 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODPAINTSHOP-PRO-QOP-85-07 Surface Treatment and Coating R0.pdf processing result: Text extraction done
+2025-06-11 09:51:18,542 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 7
+2025-06-11 09:51:18,542 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 7 pages...
+2025-06-11 09:51:18,543 - document_processor - INFO - file_process_new.py:455 - Created 23 chunks
+2025-06-11 09:51:18,543 - document_processor - INFO - file_process_new.py:532 - Created 23 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODPAINTSHOP-PRO-QOP-85-07 Surface Treatment and Coating R0.pdf
+2025-06-11 09:51:18,543 - document_processor - INFO - file_process_new.py:548 - Inserting 23 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODPAINTSHOP-PRO-QOP-85-07 Surface Treatment and Coating R0.pdf
+2025-06-11 09:51:18,543 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 23 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:19,817 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 23 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:19,823 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODPAINTSHOP-PRO-QOP-85-07 Surface Treatment and Coating R0.pdf into Milvus
+2025-06-11 09:51:19,823 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODESHOP-PRO-QOP-85-08A Execution & Monitoring On Electronics Shop Floor R0.pdf
+2025-06-11 09:51:19,847 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODESHOP-PRO-QOP-85-08A Execution & Monitoring On Electronics Shop Floor R0.pdf processing result: Text extraction done
+2025-06-11 09:51:19,847 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 5
+2025-06-11 09:51:19,847 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 5 pages...
+2025-06-11 09:51:19,848 - document_processor - INFO - file_process_new.py:455 - Created 18 chunks
+2025-06-11 09:51:19,848 - document_processor - INFO - file_process_new.py:532 - Created 18 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODESHOP-PRO-QOP-85-08A Execution & Monitoring On Electronics Shop Floor R0.pdf
+2025-06-11 09:51:19,848 - document_processor - INFO - file_process_new.py:548 - Inserting 18 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODESHOP-PRO-QOP-85-08A Execution & Monitoring On Electronics Shop Floor R0.pdf
+2025-06-11 09:51:19,849 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 18 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:20,740 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 18 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:20,746 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-T-A-PRODESHOP-PRO-QOP-85-08A Execution & Monitoring On Electronics Shop Floor R0.pdf into Milvus
+2025-06-11 09:51:20,747 - document_processor - INFO - file_process_new.py:513 - Processing file: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-91-02 Customer Satisfaction R0.pdf
+2025-06-11 09:51:20,764 - document_processor - DEBUG - file_process_new.py:516 - File /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-91-02 Customer Satisfaction R0.pdf processing result: Text extraction done
+2025-06-11 09:51:20,765 - document_processor - DEBUG - file_process_new.py:517 - Pages extracted: 3
+2025-06-11 09:51:20,765 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 3 pages...
+2025-06-11 09:51:20,766 - document_processor - INFO - file_process_new.py:455 - Created 9 chunks
+2025-06-11 09:51:20,766 - document_processor - INFO - file_process_new.py:532 - Created 9 chunks from /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-91-02 Customer Satisfaction R0.pdf
+2025-06-11 09:51:20,766 - document_processor - INFO - file_process_new.py:548 - Inserting 9 documents into Milvus for /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-91-02 Customer Satisfaction R0.pdf
+2025-06-11 09:51:20,766 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 9 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:51:21,146 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 9 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:21,152 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-MKT-PRO-QOP-91-02 Customer Satisfaction R0.pdf into Milvus
+2025-06-11 09:51:44,847 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 1168 documents into Milvus collection 'QABackup'
+2025-06-11 09:51:44,853 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/Root_Cause_Analysis_Improving_Performance_for_Bottom_Line_Robert.pdf into Milvus
+2025-06-11 09:52:10,620 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 1759 documents into Milvus collection 'QABackup'
+2025-06-11 09:52:10,627 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/Root_Cause_Failure_Analysis_A_Guide_to_Improve_Plant_Trinath_Sahoo.pdf into Milvus
+2025-06-11 09:52:37,878 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 1998 documents into Milvus collection 'QABackup'
+2025-06-11 09:52:37,884 - document_processor - INFO - file_process_new.py:551 - Successfully inserted /home/qa-prod/Documents/QA_docs/Heat Treatment Principles.pdf into Milvus
+2025-06-11 09:52:37,886 - document_processor - INFO - file_process_new.py:685 - Processing 1 OCR files
+2025-06-11 09:53:43,072 - document_processor - INFO - file_process_new.py:413 - Creating chunks from 6 pages...
+2025-06-11 09:53:43,073 - document_processor - INFO - file_process_new.py:455 - Created 25 chunks
+2025-06-11 09:53:43,074 - document_processor - INFO - file_process_new.py:493 - Attempting to insert 25 documents into Milvus collection 'QABackup' (attempt 1/3)
+2025-06-11 09:53:44,431 - document_processor - INFO - file_process_new.py:500 - Successfully inserted 25 documents into Milvus collection 'QABackup'
+2025-06-11 09:53:44,437 - document_processor - INFO - file_process_new.py:732 - OCR progress: 1/1 - File: /home/qa-prod/Documents/QA_docs/L&T-PES-PTH-A-QC-PRO-QOP-84-02 Verification of Externally Provided Products R0.pdf - Status: Success
+2025-06-11 09:55:51,225 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 10:00:51,226 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 10:05:51,227 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 10:10:51,228 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 10:15:51,229 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 10:20:51,229 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 10:25:51,230 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 10:30:51,232 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 10:35:51,232 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 10:40:51,233 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
+2025-06-11 10:45:51,234 - document_processor - INFO - file_process_new.py:602 - HEARTBEAT: Processing collection: QABackup
